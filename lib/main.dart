@@ -1,7 +1,7 @@
 //This is the fist viable version of my dice app, The alpha 1.0
 //A lot of things need to be optimise and some bugs must be fixed
 //The layout is actually fix and design for one size of phone so one of the objectives for the beta or final versions is to bring a responsive layout
-//I will try to publish the beta version at the end of July 
+//I will try to publish the beta version at the end of July
 //Roadmap soon available in readme
 //And sorry for my english level, I'm not english
 
@@ -46,7 +46,7 @@ class InitPage extends StatefulWidget {
 
 class _InitPageState extends State<InitPage> {
   int nbofdice = 1;
-  int nboffaces = 6;
+  int nbofsides = 6;
   int x = 4;
   @override
   Widget build(BuildContext context) => SliderTheme(
@@ -89,13 +89,13 @@ class _InitPageState extends State<InitPage> {
               height: 10,
             ),
             Slider(
-                value: nboffaces.toDouble(),
+                value: nbofsides.toDouble(),
                 min: 2,
                 max: 100,
                 divisions: 99,
-                label: nboffaces.toString(),
+                label: nbofsides.toString(),
                 onChanged: (value) => setState(() {
-                      this.nboffaces = value.toInt();
+                      this.nbofsides = value.toInt();
                     })),
             SizedBox(
               height: 110,
@@ -114,7 +114,7 @@ class _InitPageState extends State<InitPage> {
                         return MyHomePage(
                             title: "DE",
                             nbofdice: nbofdice,
-                            nboffaces: nboffaces);
+                            nbofsides: nbofsides);
                       },
                     ),
                   );
