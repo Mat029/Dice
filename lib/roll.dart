@@ -6,11 +6,11 @@ class MyHomePage extends StatefulWidget {
       {Key? key,
       required this.title,
       required this.nbofdice,
-      required this.nboffaces})
+      required this.nbofsides})
       : super(key: key);
   final String title;
   final int nbofdice;
-  final int nboffaces;
+  final int nbofsides;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -31,30 +31,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    randomNumber1 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber2 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber3 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber4 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber5 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber6 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber7 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber8 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber9 = 1 + random.nextInt(widget.nboffaces);
-    randomNumber10 = 1 + random.nextInt(widget.nboffaces);
+    randomNumber1 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber2 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber3 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber4 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber5 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber6 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber7 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber8 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber9 = 1 + random.nextInt(widget.nbofsides);
+    randomNumber10 = 1 + random.nextInt(widget.nbofsides);
   }
 
   void _incrementCounter() {
     setState(() {
-      randomNumber1 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber2 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber3 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber4 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber5 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber6 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber7 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber8 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber9 = 1 + random.nextInt(widget.nboffaces);
-      randomNumber10 = 1 + random.nextInt(widget.nboffaces);
+      randomNumber1 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber2 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber3 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber4 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber5 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber6 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber7 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber8 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber9 = 1 + random.nextInt(widget.nbofsides);
+      randomNumber10 = 1 + random.nextInt(widget.nbofsides);
     });
   }
 
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               random8: randomNumber8,
               random9: randomNumber9,
               random10: randomNumber10,
-              face: widget.nboffaces,
+              sides: widget.nbofsides,
               dice: widget.nbofdice,
             ),
             SizedBox(
@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class ImageDice extends StatefulWidget {
   ImageDice(
       {Key? key,
-      required this.face,
+      required this.sides,
       required this.random1,
       required this.random2,
       required this.random3,
@@ -130,7 +130,7 @@ class ImageDice extends StatefulWidget {
       required this.random10,
       required this.dice})
       : super(key: key);
-  final int face;
+  final int sides;
   final int random1;
   final int random2;
   final int random3;
@@ -213,7 +213,7 @@ class _ImageDiceState extends State<ImageDice> {
 
     // ONE DICE
     if (widget.dice == 1) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -260,7 +260,7 @@ class _ImageDiceState extends State<ImageDice> {
       }
       // TWO DICES
     } else if (widget.dice == 2) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -339,7 +339,7 @@ class _ImageDiceState extends State<ImageDice> {
       }
       //THREE DIC3ES
     } else if (widget.dice == 3) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -464,7 +464,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     // FOUR DICES
     else if (widget.dice == 4) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -634,7 +634,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     //FIVE DICES
     else if (widget.dice == 5) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -849,7 +849,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     // SIX DICES
     else if (widget.dice == 6) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -1099,7 +1099,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     // SEVEN DICES
     else if (widget.dice == 7) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -1384,7 +1384,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     // HEIGHT DICES
     else if (widget.dice == 8) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -1704,7 +1704,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     // NINE DICES
     else if (widget.dice == 9) {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -2059,7 +2059,7 @@ class _ImageDiceState extends State<ImageDice> {
     }
     // TEN DICES SOON
     else {
-      if (widget.face <= 6) {
+      if (widget.sides <= 6) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
