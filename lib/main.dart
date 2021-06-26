@@ -1,3 +1,10 @@
+//This is the fist viable version of my dice app, The alpha 1.0
+//A lot of things need to be optimise and some bugs must be fixed
+//The layout is actually fix and design for one size of phone so one of the objectives for the beta or final versions is to bring a responsive layout
+//I will try to publish the beta version at the end of July 
+//Roadmap soon available in readme
+//And sorry for my english level, I'm not english
+
 import 'package:flutter/material.dart';
 import 'package:deapp/roll.dart';
 
