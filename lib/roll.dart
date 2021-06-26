@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             SizedBox(
-              height: 80,
+              height: 60,
             ),
             ImageDice(
               random1: randomNumber1,
@@ -91,11 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
               dice: widget.nbofdice,
             ),
             SizedBox(
-              height: 50,
+              height: 46,
             ),
             TextButton(
               style: TextButton.styleFrom(
-                  padding: EdgeInsets.fromLTRB(50, 15, 50, 15),
+                  padding: EdgeInsets.fromLTRB(46, 13, 46, 13),
                   primary: Colors.white,
                   backgroundColor: Colors.blue),
               onPressed: _incrementCounter,
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SizedBox(
-              height: 130,
+              height: 70,
             ),
           ],
         ),
@@ -168,58 +168,2294 @@ class _ImageDiceState extends State<ImageDice> {
     int r8 = widget.random8;
     int r9 = widget.random9;
     int r10 = widget.random10;
-    double c = 0;
+    double c1 = 0;
+    double c2 = 0;
+    double c3 = 0;
+    double c4 = 0;
+    double c5 = 0;
+    double c6 = 0;
+    double c7 = 0;
+    double c8 = 0;
+    double c9 = 0;
+    double c10 = 0;
     double x = 1;
     if (widget.dice == 2) {
-      x = 0.8;
+      x = 0.7;
+    } else if (widget.dice == 10) {
+      x = 0.3;
     } else if (widget.dice >= 7) {
-      x = 0.4;
+      x = 0.35;
     } else if (widget.dice >= 3) {
-      x = 0.6;
+      x = 0.45;
     }
-    if (widget.face <= 6) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            "image/" + imageArray[r1 - 1],
-            height: (175 * x) + 25,
-            width: (175 * x) + 25,
-          ),
-        ],
-      );
-    } else {
-      if (r1 == 100) {
-        c = 100;
-      }
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            children: <Widget>[
-              Container(
-                width: ((220 + c) * x) + 30,
-                height: (220 * x) + 30,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: (10 * x) + 3),
-                  borderRadius: BorderRadius.circular(50 * x),
-                  shape: BoxShape.rectangle,
-                ),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "$r1",
-                    textScaleFactor: (10.8 * x) + 1.2,
-                    style: TextStyle(
-                      color: Colors.black,
+
+    if (r1 == 100) {
+      c1 = 100;
+    } else if (r2 == 100) {
+      c2 = 100;
+    } else if (r3 == 100) {
+      c3 = 100;
+    } else if (r4 == 100) {
+      c4 = 100;
+    } else if (r5 == 100) {
+      c5 = 100;
+    } else if (r6 == 100) {
+      c6 = 100;
+    } else if (r7 == 100) {
+      c7 = 100;
+    } else if (r8 == 100) {
+      c8 = 100;
+    } else if (r9 == 100) {
+      c9 = 100;
+    } else if (r10 == 100) {
+      c10 = 100;
+    }
+
+    // ONE DICE
+    if (widget.dice == 1) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "image/" + imageArray[r1 - 1],
+              height: (175 * x) + 25,
+              width: (175 * x) + 25,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              children: <Widget>[
+                Container(
+                  width: ((220 + c1) * x) + 30,
+                  height: (220 * x) + 30,
+                  decoration: BoxDecoration(
+                    border:
+                        Border.all(color: Colors.black, width: (10 * x) + 3),
+                    borderRadius: BorderRadius.circular(50 * x),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "$r1",
+                      textScaleFactor: (10.8 * x) + 1.2,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
-      );
+              ],
+            ),
+          ],
+        );
+      }
+      // TWO DICES
+    } else if (widget.dice == 2) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "image/" + imageArray[r1 - 1],
+              height: (175 * x) + 25,
+              width: (175 * x) + 25,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Image.asset(
+              "image/" + imageArray[r2 - 1],
+              height: (175 * x) + 25,
+              width: (175 * x) + 25,
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              children: <Widget>[
+                Container(
+                  width: ((220 + c1) * x) + 30,
+                  height: (220 * x) + 30,
+                  decoration: BoxDecoration(
+                    border:
+                        Border.all(color: Colors.black, width: (10 * x) + 3),
+                    borderRadius: BorderRadius.circular(50 * x),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "$r1",
+                      textScaleFactor: (10.8 * x) + 1.2,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Stack(
+              children: <Widget>[
+                Container(
+                  width: ((220 + c2) * x) + 30,
+                  height: (220 * x) + 30,
+                  decoration: BoxDecoration(
+                    border:
+                        Border.all(color: Colors.black, width: (10 * x) + 3),
+                    borderRadius: BorderRadius.circular(50 * x),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "$r2",
+                      textScaleFactor: (10.8 * x) + 1.2,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+      //THREE DIC3ES
+    } else if (widget.dice == 3) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Image.asset(
+              "image/" + imageArray[r3 - 1],
+              height: (175 * x) + 25,
+              width: (175 * x) + 25,
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Stack(
+              children: <Widget>[
+                Container(
+                  width: ((220 + c3) * x) + 30,
+                  height: (220 * x) + 30,
+                  decoration: BoxDecoration(
+                    border:
+                        Border.all(color: Colors.black, width: (10 * x) + 3),
+                    borderRadius: BorderRadius.circular(50 * x),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "$r3",
+                      textScaleFactor: (10.8 * x) + 1.2,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    // FOUR DICES
+    else if (widget.dice == 4) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    //FIVE DICES
+    else if (widget.dice == 5) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r5 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c5) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r5",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    // SIX DICES
+    else if (widget.dice == 6) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r5 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r6 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c5) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r5",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c6) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r6",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    // SEVEN DICES
+    else if (widget.dice == 7) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r5 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r6 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r7 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c5) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r5",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c6) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r6",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c7) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r7",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    // HEIGHT DICES
+    else if (widget.dice == 8) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r5 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r6 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r7 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r8 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c5) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r5",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c6) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r6",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c7) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r7",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c8) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r8",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    // NINE DICES
+    else if (widget.dice == 9) {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r5 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r6 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r7 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r8 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r9 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c5) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r5",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c6) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r6",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 17,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c7) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r7",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c8) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r8",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 17,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c9) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r9",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+    }
+    // TEN DICES SOON
+    else {
+      if (widget.face <= 6) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r1 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r2 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r3 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r4 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r5 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r6 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r7 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "image/" + imageArray[r8 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r9 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Image.asset(
+                  "image/" + imageArray[r10 - 1],
+                  height: (175 * x) + 25,
+                  width: (175 * x) + 25,
+                ),
+              ],
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c1) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r1",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 14,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c2) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r2",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 14,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c3) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r3",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 14,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c4) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r4",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 14,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c5) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r5",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 14,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c6) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r6",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 14,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c7) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r7",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 14,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c8) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r8",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 14,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c9) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r9",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 14,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: ((220 + c10) * x) + 30,
+                      height: (220 * x) + 30,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black, width: (10 * x) + 3),
+                        borderRadius: BorderRadius.circular(50 * x),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "$r10",
+                          textScaleFactor: (10.8 * x) + 1.2,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        );
+      }
     }
   }
 }
