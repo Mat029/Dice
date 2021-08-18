@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:deapp/dice_number.dart';
+import 'package:deapp/dice_side.dart';
 import 'dart:math';
 
 class MyHomePage extends StatefulWidget {
@@ -102,14 +104,6 @@ class ImageDice extends StatefulWidget {
 }
 
 class _ImageDiceState extends State<ImageDice> {
-  var imageArray = [
-    'one.png',
-    'two.png',
-    'three.png',
-    'four.png',
-    'five.png',
-    'six.png'
-  ];
   @override
   Widget build(BuildContext context) {
     int r1 = widget.ranNum[0];
@@ -162,46 +156,14 @@ class _ImageDiceState extends State<ImageDice> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              "image/" + imageArray[r1 - 1],
-              height: (175 * x) + 25,
-              width: (175 * x) + 25,
-            ),
+            Sides_image(number: r1, x: x),
             SizedBox(
               height: 50,
             ),
           ],
         );
       } else {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              children: <Widget>[
-                Container(
-                  width: ((220 + c[0]) * x) + 30,
-                  height: (220 * x) + 30,
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(color: Colors.black, width: (10 * x) + 3),
-                    borderRadius: BorderRadius.circular(50 * x),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "$r1",
-                      textScaleFactor: (10.8 * x) + 1.2,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        );
+        return Sides(number: r1, c: c[0], x: x);
       }
       // TWO DICES
     } else if (widget.dice == 2) {
@@ -209,80 +171,26 @@ class _ImageDiceState extends State<ImageDice> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              "image/" + imageArray[r1 - 1],
-              height: (175 * x) + 25,
-              width: (175 * x) + 25,
-            ),
+            Sides_image(number: r1, x: x),
             SizedBox(
               height: 50,
             ),
-            Image.asset(
-              "image/" + imageArray[r2 - 1],
-              height: (175 * x) + 25,
-              width: (175 * x) + 25,
-            ),
+            Sides_image(number: r2, x: x),
           ],
         );
       } else {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
-              children: <Widget>[
-                Container(
-                  width: ((220 + c[0]) * x) + 30,
-                  height: (220 * x) + 30,
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(color: Colors.black, width: (10 * x) + 3),
-                    borderRadius: BorderRadius.circular(50 * x),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "$r1",
-                      textScaleFactor: (10.8 * x) + 1.2,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            Sides(number: r1, c: c[0], x: x),
             SizedBox(
               height: 30,
             ),
-            Stack(
-              children: <Widget>[
-                Container(
-                  width: ((220 + c[1]) * x) + 30,
-                  height: (220 * x) + 30,
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(color: Colors.black, width: (10 * x) + 3),
-                    borderRadius: BorderRadius.circular(50 * x),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "$r2",
-                      textScaleFactor: (10.8 * x) + 1.2,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            Sides(number: r2, c: c[1], x: x)
           ],
         );
       }
-      //THREE DIC3ES
+      //THREE DICES
     } else if (widget.dice == 3) {
       if (widget.sides <= 6) {
         return Column(
@@ -291,29 +199,17 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
               ],
             ),
             SizedBox(
               height: 25,
             ),
-            Image.asset(
-              "image/" + imageArray[r3 - 1],
-              height: (175 * x) + 25,
-              width: (175 * x) + 25,
-            ),
+            Sides_image(number: r3, x: x),
           ],
         );
       } else {
@@ -323,86 +219,17 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
               ],
             ),
             SizedBox(
               height: 25,
             ),
-            Stack(
-              children: <Widget>[
-                Container(
-                  width: ((220 + c[2]) * x) + 30,
-                  height: (220 * x) + 30,
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(color: Colors.black, width: (10 * x) + 3),
-                    borderRadius: BorderRadius.circular(50 * x),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "$r3",
-                      textScaleFactor: (10.8 * x) + 1.2,
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            Sides(number: r3, c: c[2], x: x),
           ],
         );
       }
@@ -416,19 +243,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -437,19 +256,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
               ],
             ),
           ],
@@ -461,57 +272,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
               ],
             ),
             SizedBox(
@@ -520,57 +285,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
               ],
             ),
           ],
@@ -586,19 +305,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -607,11 +318,7 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -620,19 +327,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r5 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r5, x: x),
               ],
             ),
           ],
@@ -644,57 +343,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 20,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
               ],
             ),
             SizedBox(
@@ -703,30 +356,7 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
               ],
             ),
             SizedBox(
@@ -735,57 +365,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
                 SizedBox(
                   width: 20,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[4]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r5",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r5, c: c[4], x: x),
               ],
             ),
           ],
@@ -801,19 +385,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -822,19 +398,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
               ],
             ),
             SizedBox(
@@ -843,19 +411,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r5 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r5, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r6 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r6, x: x),
               ],
             ),
           ],
@@ -867,57 +427,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 20,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
               ],
             ),
             SizedBox(
@@ -926,57 +440,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
                 SizedBox(
                   width: 20,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
               ],
             ),
             SizedBox(
@@ -985,57 +453,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[4]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r5",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r5, c: c[4], x: x),
                 SizedBox(
                   width: 20,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[5]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r6",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r6, c: c[5], x: x),
               ],
             ),
           ],
@@ -1051,19 +473,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -1072,27 +486,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r5 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r5, x: x),
               ],
             ),
             SizedBox(
@@ -1101,19 +503,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r6 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r6, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r7 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r7, x: x),
               ],
             ),
           ],
@@ -1125,57 +519,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
               ],
             ),
             SizedBox(
@@ -1184,84 +532,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[4]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r5",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r5, c: c[4], x: x),
               ],
             ),
             SizedBox(
@@ -1270,57 +549,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[5]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r6",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r6, c: c[5], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[6]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r7",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r7, c: c[6], x: x),
               ],
             ),
           ],
@@ -1336,27 +569,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -1365,19 +586,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r5 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r5, x: x),
               ],
             ),
             SizedBox(
@@ -1386,27 +599,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r6 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r6, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r7 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r7, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r8 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r8, x: x),
               ],
             ),
           ],
@@ -1418,84 +619,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
               ],
             ),
             SizedBox(
@@ -1504,57 +636,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[4]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r5",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r5, c: c[4], x: x),
               ],
             ),
             SizedBox(
@@ -1563,84 +649,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[5]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r6",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r6, c: c[5], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[6]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r7",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r7, c: c[6], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[7]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r8",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r8, c: c[7], x: x),
               ],
             ),
           ],
@@ -1656,27 +673,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -1685,27 +690,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r5 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r5, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r6 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r6, x: x),
               ],
             ),
             SizedBox(
@@ -1714,27 +707,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r7 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r7, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r8 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r8, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r9 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r9, x: x),
               ],
             ),
           ],
@@ -1746,84 +727,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
               ],
             ),
             SizedBox(
@@ -1832,84 +744,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[4]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r5",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r5, c: c[4], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[5]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r6",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r6, c: c[5], x: x),
               ],
             ),
             SizedBox(
@@ -1918,91 +761,22 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[6]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r7",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r7, c: c[6], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[7]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r8",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r8, c: c[7], x: x),
                 SizedBox(
                   width: 17,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[8]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r9",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r9, c: c[8], x: x),
               ],
             ),
           ],
         );
       }
     }
-    // TEN DICES SOON
+    // TEN DICES
     else {
       if (widget.sides <= 6) {
         return Column(
@@ -2011,27 +785,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r1 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r2 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r2, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r3 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -2040,19 +802,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r4 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r5 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r5, x: x),
               ],
             ),
             SizedBox(
@@ -2061,19 +815,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r6 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r6, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r7 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r7, x: x),
               ],
             ),
             SizedBox(
@@ -2082,27 +828,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "image/" + imageArray[r8 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r8, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r9 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r9, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Image.asset(
-                  "image/" + imageArray[r10 - 1],
-                  height: (175 * x) + 25,
-                  width: (175 * x) + 25,
-                ),
+                Sides_image(number: r10, x: x),
               ],
             ),
           ],
@@ -2114,84 +848,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[0]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r1",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r1, c: c[0], x: x),
                 SizedBox(
                   width: 14,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[1]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r2",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r2, c: c[1], x: x),
                 SizedBox(
                   width: 14,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[2]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r3",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r3, c: c[2], x: x),
               ],
             ),
             SizedBox(
@@ -2200,57 +865,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[3]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r4",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r4, c: c[3], x: x),
                 SizedBox(
                   width: 14,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[4]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r5",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r5, c: c[4], x: x),
               ],
             ),
             SizedBox(
@@ -2259,57 +878,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[5]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r6",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r6, c: c[5], x: x),
                 SizedBox(
                   width: 14,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[6]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r7",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r7, c: c[6], x: x),
               ],
             ),
             SizedBox(
@@ -2318,84 +891,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[7]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r8",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r8, c: c[7], x: x),
                 SizedBox(
                   width: 14,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[8]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r9",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r9, c: c[8], x: x),
                 SizedBox(
                   width: 14,
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: ((220 + c[9]) * x) + 30,
-                      height: (220 * x) + 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: (10 * x) + 3),
-                        borderRadius: BorderRadius.circular(50 * x),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$r10",
-                          textScaleFactor: (10.8 * x) + 1.2,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                Sides(number: r10, c: c[9], x: x),
               ],
             ),
           ],
