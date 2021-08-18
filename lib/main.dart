@@ -112,9 +112,7 @@ class _InitPageState extends State<InitPage> {
                     MaterialPageRoute(
                       builder: (context) {
                         return MyHomePage(
-                            title: "DE",
-                            nbofdice: nbofdice,
-                            nbofsides: nbofsides);
+                            title: "DE", dice: nbofdice, sides: nbofsides);
                       },
                     ),
                   );

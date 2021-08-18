@@ -5,8 +5,8 @@ My first real app in flutter, a basic dice app.
 Road map :
 
 Alpha :
-- optimisation (list for random number)
-- add a return buton to the second screen
+- optimisation (list for random number) : ✅ (18/08)
+- add a return buton to the second screen : ✅ (july)
 - fix of two or three 100 in the same ligne
 - add of a name, an icon, translations (english, french, german, spanish, italia, portuguese)
 - add new screen size compatible, whith test and fix

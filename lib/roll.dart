@@ -3,58 +3,46 @@ import 'dart:math';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage(
-      {Key? key,
-      required this.title,
-      required this.nbofdice,
-      required this.nbofsides})
+      {Key? key, required this.title, required this.dice, required this.sides})
       : super(key: key);
   final String title;
-  final int nbofdice;
-  final int nbofsides;
+  final int dice;
+  final int sides;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int randomNumber1 = 1;
-  int randomNumber2 = 1;
-  int randomNumber3 = 1;
-  int randomNumber4 = 1;
-  int randomNumber5 = 1;
-  int randomNumber6 = 1;
-  int randomNumber7 = 1;
-  int randomNumber8 = 1;
-  int randomNumber9 = 1;
-  int randomNumber10 = 1;
+  List<int> rannum = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
   Random random = new Random();
 
   void initState() {
     super.initState();
-    randomNumber1 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber2 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber3 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber4 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber5 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber6 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber7 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber8 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber9 = 1 + random.nextInt(widget.nbofsides);
-    randomNumber10 = 1 + random.nextInt(widget.nbofsides);
+    rannum[0] = 1 + random.nextInt(widget.sides);
+    rannum[1] = 1 + random.nextInt(widget.sides);
+    rannum[2] = 1 + random.nextInt(widget.sides);
+    rannum[3] = 1 + random.nextInt(widget.sides);
+    rannum[4] = 1 + random.nextInt(widget.sides);
+    rannum[5] = 1 + random.nextInt(widget.sides);
+    rannum[6] = 1 + random.nextInt(widget.sides);
+    rannum[7] = 1 + random.nextInt(widget.sides);
+    rannum[8] = 1 + random.nextInt(widget.sides);
+    rannum[9] = 1 + random.nextInt(widget.sides);
   }
 
-  void _incrementCounter() {
+  void _launch() {
     setState(() {
-      randomNumber1 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber2 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber3 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber4 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber5 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber6 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber7 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber8 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber9 = 1 + random.nextInt(widget.nbofsides);
-      randomNumber10 = 1 + random.nextInt(widget.nbofsides);
+      rannum[0] = 1 + random.nextInt(widget.sides);
+      rannum[1] = 1 + random.nextInt(widget.sides);
+      rannum[2] = 1 + random.nextInt(widget.sides);
+      rannum[3] = 1 + random.nextInt(widget.sides);
+      rannum[4] = 1 + random.nextInt(widget.sides);
+      rannum[5] = 1 + random.nextInt(widget.sides);
+      rannum[6] = 1 + random.nextInt(widget.sides);
+      rannum[7] = 1 + random.nextInt(widget.sides);
+      rannum[8] = 1 + random.nextInt(widget.sides);
+      rannum[9] = 1 + random.nextInt(widget.sides);
     });
   }
 
@@ -76,20 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 60,
             ),
-            ImageDice(
-              random1: randomNumber1,
-              random2: randomNumber2,
-              random3: randomNumber3,
-              random4: randomNumber4,
-              random5: randomNumber5,
-              random6: randomNumber6,
-              random7: randomNumber7,
-              random8: randomNumber8,
-              random9: randomNumber9,
-              random10: randomNumber10,
-              sides: widget.nbofsides,
-              dice: widget.nbofdice,
-            ),
+            ImageDice(sides: widget.sides, dice: widget.dice, ranNum: rannum),
             SizedBox(
               height: 46,
             ),
@@ -98,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.fromLTRB(46, 13, 46, 13),
                   primary: Colors.white,
                   backgroundColor: Colors.blue),
-              onPressed: _incrementCounter,
+              onPressed: _launch,
               child: Text(
                 'Relancer',
                 textScaleFactor: 3,
@@ -116,32 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class ImageDice extends StatefulWidget {
   ImageDice(
-      {Key? key,
-      required this.sides,
-      required this.random1,
-      required this.random2,
-      required this.random3,
-      required this.random4,
-      required this.random5,
-      required this.random6,
-      required this.random7,
-      required this.random8,
-      required this.random9,
-      required this.random10,
-      required this.dice})
+      {Key? key, required this.sides, required this.dice, required this.ranNum})
       : super(key: key);
   final int sides;
-  final int random1;
-  final int random2;
-  final int random3;
-  final int random4;
-  final int random5;
-  final int random6;
-  final int random7;
-  final int random8;
-  final int random9;
-  final int random10;
   final int dice;
+  final List ranNum;
 
   @override
   _ImageDiceState createState() => _ImageDiceState();
@@ -158,26 +112,17 @@ class _ImageDiceState extends State<ImageDice> {
   ];
   @override
   Widget build(BuildContext context) {
-    int r1 = widget.random1;
-    int r2 = widget.random2;
-    int r3 = widget.random3;
-    int r4 = widget.random4;
-    int r5 = widget.random5;
-    int r6 = widget.random6;
-    int r7 = widget.random7;
-    int r8 = widget.random8;
-    int r9 = widget.random9;
-    int r10 = widget.random10;
-    double c1 = 0;
-    double c2 = 0;
-    double c3 = 0;
-    double c4 = 0;
-    double c5 = 0;
-    double c6 = 0;
-    double c7 = 0;
-    double c8 = 0;
-    double c9 = 0;
-    double c10 = 0;
+    int r1 = widget.ranNum[0];
+    int r2 = widget.ranNum[1];
+    int r3 = widget.ranNum[2];
+    int r4 = widget.ranNum[3];
+    int r5 = widget.ranNum[4];
+    int r6 = widget.ranNum[5];
+    int r7 = widget.ranNum[6];
+    int r8 = widget.ranNum[7];
+    int r9 = widget.ranNum[8];
+    int r10 = widget.ranNum[9];
+    List<double> c = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     double x = 1;
     if (widget.dice == 2) {
       x = 0.7;
@@ -190,25 +135,25 @@ class _ImageDiceState extends State<ImageDice> {
     }
 
     if (r1 == 100) {
-      c1 = 100;
+      c[0] = 100;
     } else if (r2 == 100) {
-      c2 = 100;
+      c[1] = 100;
     } else if (r3 == 100) {
-      c3 = 100;
+      c[2] = 100;
     } else if (r4 == 100) {
-      c4 = 100;
+      c[3] = 100;
     } else if (r5 == 100) {
-      c5 = 100;
+      c[4] = 100;
     } else if (r6 == 100) {
-      c6 = 100;
+      c[5] = 100;
     } else if (r7 == 100) {
-      c7 = 100;
+      c[6] = 100;
     } else if (r8 == 100) {
-      c8 = 100;
+      c[7] = 100;
     } else if (r9 == 100) {
-      c9 = 100;
+      c[8] = 100;
     } else if (r10 == 100) {
-      c10 = 100;
+      c[9] = 100;
     }
 
     // ONE DICE
@@ -234,7 +179,7 @@ class _ImageDiceState extends State<ImageDice> {
             Stack(
               children: <Widget>[
                 Container(
-                  width: ((220 + c1) * x) + 30,
+                  width: ((220 + c[0]) * x) + 30,
                   height: (220 * x) + 30,
                   decoration: BoxDecoration(
                     border:
@@ -286,7 +231,7 @@ class _ImageDiceState extends State<ImageDice> {
             Stack(
               children: <Widget>[
                 Container(
-                  width: ((220 + c1) * x) + 30,
+                  width: ((220 + c[0]) * x) + 30,
                   height: (220 * x) + 30,
                   decoration: BoxDecoration(
                     border:
@@ -313,7 +258,7 @@ class _ImageDiceState extends State<ImageDice> {
             Stack(
               children: <Widget>[
                 Container(
-                  width: ((220 + c2) * x) + 30,
+                  width: ((220 + c[1]) * x) + 30,
                   height: (220 * x) + 30,
                   decoration: BoxDecoration(
                     border:
@@ -381,7 +326,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -408,7 +353,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -437,7 +382,7 @@ class _ImageDiceState extends State<ImageDice> {
             Stack(
               children: <Widget>[
                 Container(
-                  width: ((220 + c3) * x) + 30,
+                  width: ((220 + c[2]) * x) + 30,
                   height: (220 * x) + 30,
                   decoration: BoxDecoration(
                     border:
@@ -519,7 +464,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -546,7 +491,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -578,7 +523,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -605,7 +550,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -702,7 +647,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -729,7 +674,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -761,7 +706,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -793,7 +738,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -820,7 +765,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c5) * x) + 30,
+                      width: ((220 + c[4]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -925,7 +870,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -952,7 +897,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -984,7 +929,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1011,7 +956,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1043,7 +988,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c5) * x) + 30,
+                      width: ((220 + c[4]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1070,7 +1015,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c6) * x) + 30,
+                      width: ((220 + c[5]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1183,7 +1128,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1210,7 +1155,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1242,7 +1187,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1269,7 +1214,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1296,7 +1241,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c5) * x) + 30,
+                      width: ((220 + c[4]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1328,7 +1273,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c6) * x) + 30,
+                      width: ((220 + c[5]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1355,7 +1300,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c7) * x) + 30,
+                      width: ((220 + c[6]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1476,7 +1421,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1503,7 +1448,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1530,7 +1475,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1562,7 +1507,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1589,7 +1534,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c5) * x) + 30,
+                      width: ((220 + c[4]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1621,7 +1566,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c6) * x) + 30,
+                      width: ((220 + c[5]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1648,7 +1593,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c7) * x) + 30,
+                      width: ((220 + c[6]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1675,7 +1620,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c8) * x) + 30,
+                      width: ((220 + c[7]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1804,7 +1749,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1831,7 +1776,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1858,7 +1803,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1890,7 +1835,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1917,7 +1862,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c5) * x) + 30,
+                      width: ((220 + c[4]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1944,7 +1889,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c6) * x) + 30,
+                      width: ((220 + c[5]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -1976,7 +1921,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c7) * x) + 30,
+                      width: ((220 + c[6]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2003,7 +1948,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c8) * x) + 30,
+                      width: ((220 + c[7]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2030,7 +1975,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c9) * x) + 30,
+                      width: ((220 + c[8]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2172,7 +2117,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c1) * x) + 30,
+                      width: ((220 + c[0]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2199,7 +2144,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c2) * x) + 30,
+                      width: ((220 + c[1]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2226,7 +2171,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c3) * x) + 30,
+                      width: ((220 + c[2]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2258,7 +2203,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c4) * x) + 30,
+                      width: ((220 + c[3]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2285,7 +2230,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c5) * x) + 30,
+                      width: ((220 + c[4]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2317,7 +2262,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c6) * x) + 30,
+                      width: ((220 + c[5]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2344,7 +2289,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c7) * x) + 30,
+                      width: ((220 + c[6]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2376,7 +2321,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c8) * x) + 30,
+                      width: ((220 + c[7]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2403,7 +2348,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c9) * x) + 30,
+                      width: ((220 + c[8]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -2430,7 +2375,7 @@ class _ImageDiceState extends State<ImageDice> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      width: ((220 + c10) * x) + 30,
+                      width: ((220 + c[9]) * x) + 30,
                       height: (220 * x) + 30,
                       decoration: BoxDecoration(
                         border: Border.all(
