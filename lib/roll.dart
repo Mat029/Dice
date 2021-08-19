@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               style: TextButton.styleFrom(
-                  padding: EdgeInsets.fromLTRB(46, 13, 46, 13),
+                  padding: EdgeInsets.fromLTRB(45, 15, 45, 15),
                   primary: Colors.white,
                   backgroundColor: Colors.blue),
               onPressed: _launch,
@@ -120,8 +120,6 @@ class _ImageDiceState extends State<ImageDice> {
     double x = 1;
     if (widget.dice == 2) {
       x = 0.7;
-    } else if (widget.dice == 10) {
-      x = 0.28;
     } else if (widget.dice >= 7) {
       x = 0.28;
     } else if (widget.dice >= 3) {

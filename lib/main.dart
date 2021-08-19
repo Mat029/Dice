@@ -40,7 +40,6 @@ class InitPage extends StatefulWidget {
 class _InitPageState extends State<InitPage> {
   int nbofdice = 1;
   int nbofsides = 6;
-  int x = 4;
   @override
   Widget build(BuildContext context) => SliderTheme(
         data: SliderThemeData(
@@ -95,7 +94,7 @@ class _InitPageState extends State<InitPage> {
             ),
             TextButton(
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.fromLTRB(40, 16, 40, 16),
+                  padding: EdgeInsets.fromLTRB(45, 15, 45, 15),
                   backgroundColor: Colors.blue,
                   primary: Colors.white,
                 ),
@@ -112,7 +111,7 @@ class _InitPageState extends State<InitPage> {
                 },
                 child: Text(
                   "Lancer",
-                  style: TextStyle(fontSize: x * 10),
+                  textScaleFactor: 3,
                 )),
           ],
         ),
