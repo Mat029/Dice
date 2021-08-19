@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:deapp/dice_number.dart';
 import 'package:deapp/dice_side.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:math';
 
 class MyHomePage extends StatefulWidget {
@@ -77,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.blue),
               onPressed: _launch,
               child: Text(
-                'Re-roll',
+                AppLocalizations.of(context)!.reroll,
                 textScaleFactor: 3,
               ),
             ),

@@ -1,0 +1,7 @@
+{
+  "dice": "WÜRFEL",
+  "nbdices": "Anzahl der Würfel :",
+  "nbsides": "Anzahl der Gesichter :",
+  "reroll": "wiederbeleben",
+  "roll": "Werfen"
+}

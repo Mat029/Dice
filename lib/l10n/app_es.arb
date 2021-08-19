@@ -1,0 +1,7 @@
+{
+  "dice": "DADO",
+  "nbdices": "Numero de dados :",
+  "nbsides": "Numero de caras :",
+  "reroll": "Tirar",
+  "roll": "Tirar"
+}

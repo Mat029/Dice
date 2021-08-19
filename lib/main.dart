@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:deapp/roll.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +12,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      color: Colors.red,
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''),
+        Locale('es', ''),
+        Locale("fr", ""),
+        Locale("de", "")
+      ],
       home: Base(),
     );
   }
@@ -52,9 +65,9 @@ class _InitPageState extends State<InitPage> {
               height: 140,
             ),
             Text(
-              "Number of dices :",
+              AppLocalizations.of(context)!.nbdices,
+              textScaleFactor: 2.75,
               style: TextStyle(
-                fontSize: 40,
                 fontWeight: FontWeight.w900,
               ),
             ),
@@ -74,8 +87,9 @@ class _InitPageState extends State<InitPage> {
               height: 80,
             ),
             Text(
-              "Number of sides :",
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+              AppLocalizations.of(context)!.nbsides,
+              style: TextStyle(fontWeight: FontWeight.w900),
+              textScaleFactor: 2.75,
             ),
             SizedBox(
               height: 10,
@@ -104,13 +118,15 @@ class _InitPageState extends State<InitPage> {
                     MaterialPageRoute(
                       builder: (context) {
                         return MyHomePage(
-                            title: "DICE", dice: nbofdice, sides: nbofsides);
+                            title: AppLocalizations.of(context)!.dice,
+                            dice: nbofdice,
+                            sides: nbofsides);
                       },
                     ),
                   );
                 },
                 child: Text(
-                  "Roll",
+                  AppLocalizations.of(context)!.roll,
                   textScaleFactor: 3,
                 )),
           ],
