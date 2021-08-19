@@ -121,33 +121,42 @@ class _ImageDiceState extends State<ImageDice> {
     if (widget.dice == 2) {
       x = 0.7;
     } else if (widget.dice == 10) {
-      x = 0.3;
+      x = 0.28;
     } else if (widget.dice >= 7) {
-      x = 0.35;
+      x = 0.28;
     } else if (widget.dice >= 3) {
       x = 0.45;
     }
 
     if (r1 == 100) {
-      c[0] = 100;
-    } else if (r2 == 100) {
-      c[1] = 100;
-    } else if (r3 == 100) {
-      c[2] = 100;
-    } else if (r4 == 100) {
-      c[3] = 100;
-    } else if (r5 == 100) {
-      c[4] = 100;
-    } else if (r6 == 100) {
-      c[5] = 100;
-    } else if (r7 == 100) {
-      c[6] = 100;
-    } else if (r8 == 100) {
-      c[7] = 100;
-    } else if (r9 == 100) {
-      c[8] = 100;
-    } else if (r10 == 100) {
-      c[9] = 100;
+      c[0] = 93;
+    }
+    if (r2 == 100) {
+      c[1] = 93;
+    }
+    if (r3 == 100) {
+      c[2] = 93;
+    }
+    if (r4 == 100) {
+      c[3] = 93;
+    }
+    if (r5 == 100) {
+      c[4] = 93;
+    }
+    if (r6 == 100) {
+      c[5] = 93;
+    }
+    if (r7 == 100) {
+      c[6] = 93;
+    }
+    if (r8 == 100) {
+      c[7] = 93;
+    }
+    if (r9 == 100) {
+      c[8] = 93;
+    }
+    if (r10 == 100) {
+      c[9] = 93;
     }
 
     // ONE DICE
