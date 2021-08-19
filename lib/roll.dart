@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.blue),
               onPressed: _launch,
               child: Text(
-                'Relancer',
+                'Re-roll',
                 textScaleFactor: 3,
               ),
             ),

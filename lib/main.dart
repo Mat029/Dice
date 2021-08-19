@@ -52,7 +52,7 @@ class _InitPageState extends State<InitPage> {
               height: 140,
             ),
             Text(
-              "Nombre de dé :",
+              "Number of dices :",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w900,
@@ -74,7 +74,7 @@ class _InitPageState extends State<InitPage> {
               height: 80,
             ),
             Text(
-              "Nombre de faces :",
+              "Number of sides :",
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
             ),
             SizedBox(
@@ -104,13 +104,13 @@ class _InitPageState extends State<InitPage> {
                     MaterialPageRoute(
                       builder: (context) {
                         return MyHomePage(
-                            title: "DE", dice: nbofdice, sides: nbofsides);
+                            title: "DICE", dice: nbofdice, sides: nbofsides);
                       },
                     ),
                   );
                 },
                 child: Text(
-                  "Lancer",
+                  "Roll",
                   textScaleFactor: 3,
                 )),
           ],
