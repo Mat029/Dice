@@ -13,19 +13,18 @@ Alpha :
 - ~~add new screen size compatible, whith test and fix~~ (delay to beta) ❌
 - publish in the play store (private beta) ✅ (31/08 : beta 1.0.0-pre 2 )
 
-Beta (end of July/begin of august) :
+Beta (~~end of July/begin of august~~ Accepted the 6 september) :
+- add a parameter page
 - add a total counter
 - add a dark theme
 - new big optimisations 
 - responsive layout
-- publish in the play store (public beta then realease)
+- publish in the play store (realease)
 
-Realease (september) :
+Realease (september/october) :
 - fix of the bugs which can appears
 - add of new tranlates languagues (including the play store screens)
-- (new ui)
 - (publications in fdroid)
-- (build a Windows and Mac version)
 
 Devices compatility :
 
