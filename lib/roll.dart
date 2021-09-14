@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:deapp/dice_number.dart';
 import 'package:deapp/dice_side.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:math';
 
@@ -165,7 +164,7 @@ class _ImageDiceState extends State<ImageDice> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Sides_image(number: r1, x: x),
+            SidesImage(number: r1, x: x),
             SizedBox(
               height: 50,
             ),
@@ -180,11 +179,11 @@ class _ImageDiceState extends State<ImageDice> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Sides_image(number: r1, x: x),
+            SidesImage(number: r1, x: x),
             SizedBox(
               height: 50,
             ),
-            Sides_image(number: r2, x: x),
+            SidesImage(number: r2, x: x),
           ],
         );
       } else {
@@ -208,17 +207,17 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
               ],
             ),
             SizedBox(
               height: 25,
             ),
-            Sides_image(number: r3, x: x),
+            SidesImage(number: r3, x: x),
           ],
         );
       } else {
@@ -252,11 +251,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -265,11 +264,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
               ],
             ),
           ],
@@ -314,11 +313,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -327,7 +326,7 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -336,11 +335,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r5, x: x),
+                SidesImage(number: r5, x: x),
               ],
             ),
           ],
@@ -394,11 +393,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -407,11 +406,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
               ],
             ),
             SizedBox(
@@ -420,11 +419,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r5, x: x),
+                SidesImage(number: r5, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r6, x: x),
+                SidesImage(number: r6, x: x),
               ],
             ),
           ],
@@ -482,11 +481,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
               ],
             ),
             SizedBox(
@@ -495,15 +494,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r5, x: x),
+                SidesImage(number: r5, x: x),
               ],
             ),
             SizedBox(
@@ -512,11 +511,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r6, x: x),
+                SidesImage(number: r6, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r7, x: x),
+                SidesImage(number: r7, x: x),
               ],
             ),
           ],
@@ -578,15 +577,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -595,11 +594,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r5, x: x),
+                SidesImage(number: r5, x: x),
               ],
             ),
             SizedBox(
@@ -608,15 +607,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r6, x: x),
+                SidesImage(number: r6, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r7, x: x),
+                SidesImage(number: r7, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r8, x: x),
+                SidesImage(number: r8, x: x),
               ],
             ),
           ],
@@ -682,15 +681,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -699,15 +698,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r5, x: x),
+                SidesImage(number: r5, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r6, x: x),
+                SidesImage(number: r6, x: x),
               ],
             ),
             SizedBox(
@@ -716,15 +715,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r7, x: x),
+                SidesImage(number: r7, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r8, x: x),
+                SidesImage(number: r8, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r9, x: x),
+                SidesImage(number: r9, x: x),
               ],
             ),
           ],
@@ -794,15 +793,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r1, x: x),
+                SidesImage(number: r1, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r2, x: x),
+                SidesImage(number: r2, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r3, x: x),
+                SidesImage(number: r3, x: x),
               ],
             ),
             SizedBox(
@@ -811,11 +810,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r4, x: x),
+                SidesImage(number: r4, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r5, x: x),
+                SidesImage(number: r5, x: x),
               ],
             ),
             SizedBox(
@@ -824,11 +823,11 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r6, x: x),
+                SidesImage(number: r6, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r7, x: x),
+                SidesImage(number: r7, x: x),
               ],
             ),
             SizedBox(
@@ -837,15 +836,15 @@ class _ImageDiceState extends State<ImageDice> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Sides_image(number: r8, x: x),
+                SidesImage(number: r8, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r9, x: x),
+                SidesImage(number: r9, x: x),
                 SizedBox(
                   width: 25,
                 ),
-                Sides_image(number: r10, x: x),
+                SidesImage(number: r10, x: x),
               ],
             ),
           ],

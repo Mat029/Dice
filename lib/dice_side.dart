@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Sides_image extends StatelessWidget {
-  const Sides_image({Key? key, required this.number, required this.x})
+class SidesImage extends StatelessWidget {
+  const SidesImage({Key? key, required this.number, required this.x})
       : super(key: key);
   final int number;
 

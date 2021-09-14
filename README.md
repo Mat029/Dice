@@ -11,7 +11,7 @@ Alpha :
 - fix of two or three 100 in the same ligne ✅ (19/08 : 1.2.1/2) [fix for 5.8"]
 - add of a name, an icon, translations (english, french, german, spanish) ✅ (19/08 : 1.2.3/4/5/6 + 1.3.0)
 - ~~add new screen size compatible, whith test and fix~~ (delay to beta) ❌
-- publish in the play store (private beta)
+- publish in the play store (private beta) ✅ (31/08 : beta 1.0.0-pre 2 )
 
 Beta (end of July/begin of august) :
 - add a total counter
