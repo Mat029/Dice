@@ -1,5 +1,6 @@
 {
   "dice": "DICE",
+  "more": "More",
   "nbdices": "Number of dices :",
   "nbsides": "Number of sides :",
   "reroll": "Re-roll",
