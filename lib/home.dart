@@ -137,15 +137,20 @@ class _InitPageState extends State<InitPage> {
   Widget sheets() => Container(
       padding: EdgeInsets.all(10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             padding: EdgeInsets.all(20),
             child: Text(
-              "SETTINGS",
-              textScaleFactor: 1.5,
+              AppLocalizations.of(context)!.settings,
+              textAlign: TextAlign.center,
+              textScaleFactor: 1.7,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            decoration: BoxDecoration(
+                border:
+                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -153,6 +158,9 @@ class _InitPageState extends State<InitPage> {
               "Total counter",
               textScaleFactor: 1.5,
             ),
+            decoration: BoxDecoration(
+                border:
+                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -160,6 +168,9 @@ class _InitPageState extends State<InitPage> {
               "Theme",
               textScaleFactor: 1.5,
             ),
+            decoration: BoxDecoration(
+                border:
+                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -167,6 +178,9 @@ class _InitPageState extends State<InitPage> {
               "Languague",
               textScaleFactor: 1.5,
             ),
+            decoration: BoxDecoration(
+                border:
+                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
           ),
           Container(
             padding: EdgeInsets.all(20),

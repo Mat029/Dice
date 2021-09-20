@@ -15,7 +15,7 @@ Alpha :
 
 Beta (~~end of July/begin of august~~ Accepted the 6 september) :
 - fix major bug(orientation) ✅ (06/09 : 1.0.1)
-- add a parameter page ✅ (20/09 : 1.1.0)
+- add a settings page ✅ (20/09 : 1.1.0/1)
 - add a total counter
 - add a dark theme
 - new big optimisations 
