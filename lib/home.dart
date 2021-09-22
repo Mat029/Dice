@@ -141,16 +141,17 @@ class _InitPageState extends State<InitPage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(15),
             child: Text(
               AppLocalizations.of(context)!.settings,
               textAlign: TextAlign.center,
               textScaleFactor: 1.7,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            decoration: BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+          ),
+          Divider(
+            thickness: 1.1,
+            color: Colors.grey,
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -158,9 +159,10 @@ class _InitPageState extends State<InitPage> {
               "Total counter",
               textScaleFactor: 1.5,
             ),
-            decoration: BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+          ),
+          Divider(
+            thickness: 1.1,
+            color: Colors.grey,
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -168,9 +170,10 @@ class _InitPageState extends State<InitPage> {
               "Theme",
               textScaleFactor: 1.5,
             ),
-            decoration: BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+          ),
+          Divider(
+            thickness: 1.1,
+            color: Colors.grey,
           ),
           Container(
             padding: EdgeInsets.all(20),
@@ -178,9 +181,10 @@ class _InitPageState extends State<InitPage> {
               "Languague",
               textScaleFactor: 1.5,
             ),
-            decoration: BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+          ),
+          Divider(
+            thickness: 1.1,
+            color: Colors.grey,
           ),
           Container(
             padding: EdgeInsets.all(20),
