@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:deapp/roll.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'settings/settings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Base extends StatelessWidget {
   const Base({Key? key}) : super(key: key);
@@ -24,9 +26,19 @@ class InitPage extends StatefulWidget {
   _InitPageState createState() => _InitPageState();
 }
 
+int nbofdice = 1;
+int nbofsides = 6;
+_saveDice() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setInt("dice", nbofdice);
+}
+
+_saveSide() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setInt("side", nbofsides);
+}
+
 class _InitPageState extends State<InitPage> {
-  int nbofdice = 1;
-  int nbofsides = 6;
   @override
   Widget build(BuildContext context) => SliderTheme(
         data: SliderThemeData(
@@ -55,7 +67,8 @@ class _InitPageState extends State<InitPage> {
                 divisions: 9,
                 label: nbofdice.toString(),
                 onChanged: (value) => setState(() {
-                      this.nbofdice = value.toInt();
+                      nbofdice = value.toInt();
+                      _saveDice();
                     })),
             SizedBox(
               height: 80,
@@ -75,7 +88,8 @@ class _InitPageState extends State<InitPage> {
                 divisions: 99,
                 label: nbofsides.toString(),
                 onChanged: (value) => setState(() {
-                      this.nbofsides = value.toInt();
+                      nbofsides = value.toInt();
+                      _saveSide();
                     })),
             SizedBox(
               height: 90,
@@ -112,11 +126,9 @@ class _InitPageState extends State<InitPage> {
                   backgroundColor: Colors.white12,
                   shadowColor: Colors.transparent),
               onPressed: () => showModalBottomSheet(
-                  shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(50))),
-                  context: context,
-                  builder: (context) => sheets()),
+                context: context,
+                builder: (BuildContext context) => sheets(),
+              ),
               child: Column(
                 children: [
                   Icon(
@@ -133,66 +145,4 @@ class _InitPageState extends State<InitPage> {
           ],
         ),
       );
-
-  Widget sheets() => Container(
-      padding: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Text(
-              AppLocalizations.of(context)!.settings,
-              textAlign: TextAlign.center,
-              textScaleFactor: 1.7,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
-          Divider(
-            thickness: 1.1,
-            color: Colors.grey,
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              "Total counter",
-              textScaleFactor: 1.5,
-            ),
-          ),
-          Divider(
-            thickness: 1.1,
-            color: Colors.grey,
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              "Theme",
-              textScaleFactor: 1.5,
-            ),
-          ),
-          Divider(
-            thickness: 1.1,
-            color: Colors.grey,
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              "Languague",
-              textScaleFactor: 1.5,
-            ),
-          ),
-          Divider(
-            thickness: 1.1,
-            color: Colors.grey,
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              "View on Github",
-              textScaleFactor: 1.5,
-            ),
-          ),
-        ],
-      ));
 }
