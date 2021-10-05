@@ -96,7 +96,7 @@ class _InitPageState extends State<InitPage> {
             ),
             TextButton(
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.fromLTRB(45, 15, 45, 15),
+                  padding: EdgeInsets.fromLTRB(40, 12, 40, 12),
                   backgroundColor: Colors.blue,
                   primary: Colors.white,
                 ),

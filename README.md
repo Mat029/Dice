@@ -17,7 +17,7 @@ Beta (~~end of July/begin of august~~ Accepted the 6 september) :
 - fix major bug(orientation) ✅ (06/09 : 1.0.1)
 - add a settings page ✅ (20/09 : 1.1.0/1)
 - persistent data ✅ (03/10 : 1.2.0)
-- add a total counter
+- add a total counter ✅ (05/10 : 1.3.0)
 - add a dark theme
 - add language changes
 - style for settings
