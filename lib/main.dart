@@ -7,12 +7,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'settings/counter.dart';
 import 'settings/darktheme.dart';
 import 'settings/langague.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyApp(),
-  ));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -21,6 +22,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool darkMode = false;
+  dynamic savedThemeMode;
+
   @override
   void initState() {
     super.initState();
@@ -48,7 +52,7 @@ class _MyAppState extends State<MyApp> {
   _getTheme() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      theme = (prefs
+      themeOption = (prefs
               .getStringList('theme')
               ?.map((e) => e == 'true' ? true : false)
               .toList() ??
@@ -74,21 +78,37 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale('en', ''),
-        Locale('es', ''),
-        Locale("fr", ""),
-        Locale("de", "")
-      ],
-      home: Base(),
-    );
+    return AdaptiveTheme(
+        light: ThemeData(
+            brightness: Brightness.light,
+            primaryColor: Colors.blue[400],
+            hintColor: Colors.black,
+            primaryColorLight: Colors.black,
+            primaryColorDark: Colors.white12),
+        dark: ThemeData(
+            brightness: Brightness.dark,
+            primaryColor: Colors.blue[700],
+            hintColor: Colors.white,
+            primaryColorLight: Colors.white70,
+            primaryColorDark: Colors.grey[850]),
+        initial: AdaptiveThemeMode.system,
+        builder: (theme, darktheme) => MaterialApp(
+              theme: theme,
+              darkTheme: darktheme,
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: [
+                Locale('en', ''),
+                Locale('es', ''),
+                Locale("fr", ""),
+                Locale("de", "")
+              ],
+              home: Base(),
+            ));
   }
 }

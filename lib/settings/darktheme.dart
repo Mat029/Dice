@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 class DarkTheme extends StatefulWidget {
   const DarkTheme({Key? key}) : super(key: key);
@@ -8,7 +9,7 @@ class DarkTheme extends StatefulWidget {
   _DarkThemeState createState() => _DarkThemeState();
 }
 
-List<bool> theme = [false, true, false];
+List<bool> themeOption = [false, true, false];
 int themeInt = 0;
 
 class _DarkThemeState extends State<DarkTheme> {
@@ -19,19 +20,26 @@ class _DarkThemeState extends State<DarkTheme> {
       setState(() {
         prefs.setStringList(
           "theme",
-          theme.map((e) => e ? 'true' : 'false').toList(),
+          themeOption.map((e) => e ? 'true' : 'false').toList(),
         );
         prefs.setInt('themInt', themeInt);
+        if (themeOption[0] == true) {
+          AdaptiveTheme.of(context).setLight();
+        } else if (themeOption[1] == true) {
+          AdaptiveTheme.of(context).setSystem();
+        } else {
+          AdaptiveTheme.of(context).setDark();
+        }
       });
     }
 
     return ToggleButtons(
-      isSelected: theme,
+      isSelected: themeOption,
       children: <Widget>[Text("Day"), Text("System"), Text("Night")],
       onPressed: (int index) {
         setState(() {
-          for (int i = 0; i < theme.length; i++) {
-            theme[i] = i == index;
+          for (int i = 0; i < themeOption.length; i++) {
+            themeOption[i] = i == index;
           }
           themeInt = index;
           _saveTheme();

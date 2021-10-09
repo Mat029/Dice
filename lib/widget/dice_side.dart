@@ -1,3 +1,4 @@
+import 'package:deapp/settings/darktheme.dart';
 import 'package:flutter/material.dart';
 
 class SidesImage extends StatelessWidget {
@@ -9,7 +10,7 @@ class SidesImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var imageArray = [
+    var imageArrayLight = [
       'one.png',
       'two.png',
       'three.png',
@@ -17,10 +18,33 @@ class SidesImage extends StatelessWidget {
       'five.png',
       'six.png'
     ];
-    return Image.asset(
-      "image/" + imageArray[number - 1],
-      height: (175 * x) + 25,
-      width: (175 * x) + 25,
-    );
+    var imageArrayDark = [
+      "dark_one.png",
+      "dark_two.png",
+      "dark_three.png",
+      "dark_four.png",
+      "dark_five.png",
+      "dark_six.png"
+    ];
+    if (themeOption[2] == true) {
+      return Image.asset(
+        "image/" + imageArrayDark[number - 1],
+        height: (175 * x) + 25,
+        width: (175 * x) + 25,
+      );
+    } else if (themeOption[1] == true &&
+        MediaQuery.of(context).platformBrightness == Brightness.dark) {
+      return Image.asset(
+        "image/" + imageArrayDark[number - 1],
+        height: (175 * x) + 25,
+        width: (175 * x) + 25,
+      );
+    } else {
+      return Image.asset(
+        "image/" + imageArrayLight[number - 1],
+        height: (175 * x) + 25,
+        width: (175 * x) + 25,
+      );
+    }
   }
 }

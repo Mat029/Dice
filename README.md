@@ -18,7 +18,7 @@ Beta (~~end of July/begin of august~~ Accepted the 6 september) :
 - add a settings page ✅ (20/09 : 1.1.0/1)
 - persistent data ✅ (03/10 : 1.2.0)
 - add a total counter ✅ (05/10 : 1.3.0)
-- add a dark theme
+- add a dark theme ✅ (10/10 : 1.4.0)
 - add language changes
 - style for settings
 - responsive layout

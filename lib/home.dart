@@ -42,7 +42,7 @@ class _InitPageState extends State<InitPage> {
   @override
   Widget build(BuildContext context) => SliderTheme(
         data: SliderThemeData(
-          valueIndicatorColor: Colors.blue,
+          valueIndicatorColor: Theme.of(context).primaryColor,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,6 +61,7 @@ class _InitPageState extends State<InitPage> {
               height: 10,
             ),
             Slider(
+                activeColor: Theme.of(context).primaryColor,
                 value: nbofdice.ceilToDouble(),
                 min: 1,
                 max: 10,
@@ -82,6 +83,7 @@ class _InitPageState extends State<InitPage> {
               height: 10,
             ),
             Slider(
+                activeColor: Theme.of(context).primaryColor,
                 value: nbofsides.toDouble(),
                 min: 2,
                 max: 100,
@@ -97,7 +99,7 @@ class _InitPageState extends State<InitPage> {
             TextButton(
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.fromLTRB(40, 12, 40, 12),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Theme.of(context).primaryColor,
                   primary: Colors.white,
                 ),
                 onPressed: () {
@@ -122,8 +124,8 @@ class _InitPageState extends State<InitPage> {
             ),
             ElevatedButton(
               style: OutlinedButton.styleFrom(
-                  primary: Colors.black,
-                  backgroundColor: Colors.white12,
+                  primary: Theme.of(context).hintColor,
+                  backgroundColor: Theme.of(context).primaryColorDark,
                   shadowColor: Colors.transparent),
               onPressed: () => showModalBottomSheet(
                 context: context,

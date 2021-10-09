@@ -19,6 +19,7 @@ class _CounterState extends State<Counter> {
     }
 
     return Switch(
+      activeColor: Theme.of(context).primaryColor,
       value: isSelected,
       onChanged: (value) async {
         setState(() {

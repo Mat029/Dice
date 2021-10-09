@@ -54,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
           widget.title,
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextButton.styleFrom(
                   padding: EdgeInsets.fromLTRB(40, 12, 40, 12),
                   primary: Colors.white,
-                  backgroundColor: Colors.blue),
+                  backgroundColor: Theme.of(context).primaryColor),
               onPressed: _launch,
               child: Text(
                 AppLocalizations.of(context)!.reroll,
