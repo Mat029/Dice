@@ -1,4 +1,4 @@
-import 'package:deapp/settings/counter.dart';
+import 'package:deapp/widget/settings/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:deapp/widget/total_counter.dart';
 

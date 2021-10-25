@@ -35,7 +35,21 @@ class _DarkThemeState extends State<DarkTheme> {
 
     return ToggleButtons(
       isSelected: themeOption,
-      children: <Widget>[Text("Day"), Text("System"), Text("Night")],
+      borderRadius: BorderRadius.all(Radius.circular(20)),
+      children: <Widget>[
+        Icon(
+          Icons.wb_sunny,
+          semanticLabel: "Light",
+        ),
+        Icon(
+          Icons.phone_android,
+          semanticLabel: "System",
+        ),
+        Icon(
+          Icons.mode_night,
+          semanticLabel: "Night",
+        )
+      ],
       onPressed: (int index) {
         setState(() {
           for (int i = 0; i < themeOption.length; i++) {

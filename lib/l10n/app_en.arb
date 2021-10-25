@@ -1,9 +1,13 @@
 {
   "dice": "DICE",
+  "info": "App info (Beta)",
   "more": "More",
   "nbdices": "Number of dices :",
   "nbsides": "Number of sides :",
   "reroll": "Re-roll",
   "roll": "Roll",
-  "settings": "SETTINGS"
+  "settings": "SETTINGS",
+  "show": "Showing faces",
+  "theme": "Theme",
+  "total": "Total counter"
 }

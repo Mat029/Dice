@@ -1,9 +1,9 @@
-import 'package:deapp/home.dart';
+import 'package:deapp/page/home.dart';
 import 'package:deapp/widget/total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:math';
-import 'widget/image_Dice.dart';
+import '../widget/image_Dice.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage(

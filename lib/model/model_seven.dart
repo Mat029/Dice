@@ -1,3 +1,4 @@
+import 'package:deapp/widget/settings/show_face.dart';
 import 'package:flutter/material.dart';
 import 'package:deapp/widget/dice_number.dart';
 import 'package:deapp/widget/dice_side.dart';
@@ -17,7 +18,7 @@ class Seven extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (sides <= 6) {
+    if (sides <= 6 && showFace == true) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

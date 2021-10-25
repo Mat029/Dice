@@ -1,9 +1,13 @@
 {
   "dice": "DADO",
+  "info": "Información (Beta)",
   "more": "Más",
   "nbdices": "Numero de dados :",
   "nbsides": "Numero de caras :",
   "reroll": "Tirar",
   "roll": "Tirar",
-  "settings": "CONFIGURACION"
+  "settings": "CONFIGURACION",
+  "show": "Mostrando las caras",
+  "theme": "Tema",
+  "total": "Contador total"
 }

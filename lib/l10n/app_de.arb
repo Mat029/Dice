@@ -1,9 +1,13 @@
 {
   "dice": "WÜRFEL",
+  "info": "Infos zur App (Beta)",
   "more": "Mehr",
   "nbdices": "Anzahl der Würfel :",
   "nbsides": "Anzahl der Gesichter :",
   "reroll": "wiederbeleben",
   "roll": "Werfen",
-  "settings": "EINSTELLUNGEN"
+  "settings": "EINSTELLUNGEN",
+  "show": "Die Gesichter zeigen",
+  "theme": "Thema",
+  "total": "Gesamtzähler"
 }

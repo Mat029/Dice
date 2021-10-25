@@ -1,12 +1,14 @@
+import 'package:deapp/widget/settings/appversion.dart';
+import 'package:deapp/widget/settings/counter.dart';
+import 'package:deapp/widget/settings/darktheme.dart';
+import 'package:deapp/widget/settings/show_face.dart';
 import 'package:flutter/material.dart';
-import 'package:deapp/home.dart';
+import 'package:deapp/page/home.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:package_info/package_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'settings/counter.dart';
-import 'settings/darktheme.dart';
-import 'settings/langague.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 void main() async {
@@ -30,9 +32,10 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _getBool();
     _getTheme();
-    _getLanguague();
+    _getFace();
     _getDice();
     _getSides();
+    _getVersion();
   }
 
   _getBool() async {
@@ -42,10 +45,10 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  _getLanguague() async {
+  _getFace() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      languague = (prefs.getInt('language') ?? 1);
+      showFace = (prefs.getBool('Face') ?? true);
     });
   }
 
@@ -72,6 +75,13 @@ class _MyAppState extends State<MyApp> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       nbofsides = prefs.getInt("side") ?? 6;
+    });
+  }
+
+  _getVersion() async {
+    final packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      appVersion = '${packageInfo.version}';
     });
   }
 

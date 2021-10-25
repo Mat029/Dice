@@ -1,4 +1,4 @@
-import 'package:deapp/settings/darktheme.dart';
+import 'package:deapp/widget/settings/darktheme.dart';
 import 'package:flutter/material.dart';
 
 class SidesImage extends StatelessWidget {

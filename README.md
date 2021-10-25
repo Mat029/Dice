@@ -19,12 +19,14 @@ Beta (~~end of July/begin of august~~ Accepted the 6 september) :
 - persistent data ✅ (03/10 : 1.2.0)
 - add a total counter ✅ (05/10 : 1.3.0)
 - add a dark theme ✅ (10/10 : 1.4.0)
-- add language changes
-- style for settings
+- ~~add language changes~~ ❌
+- add an option to showing faces ✅ (25/10 : 1.5.0)
+- style for settings ✅ (25/10 : 1.5.0)
+- add an info page
 - responsive layout
 - publish in the play store (realease)
 
-Realease (september/october) :
+Realease (october/november) :
 - fix of the bugs which can appears
 - add of new tranlates languagues (including the play store screens)
 - (publications in fdroid)

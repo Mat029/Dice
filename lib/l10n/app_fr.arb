@@ -1,9 +1,13 @@
 {
   "dice": "DÉ",
+  "info": "Infos sur l'app (Beta)",
   "more": "Plus",
   "nbdices": "Nombre de dé :",
   "nbsides": "Nombre de faces",
   "reroll": "Relancer",
   "roll": "Lancer",
-  "settings": "PARAMETRES"
+  "settings": "PARAMETRES",
+  "show": "Montrer les faces",
+  "theme": "Thème",
+  "total": "Compteur total"
 }

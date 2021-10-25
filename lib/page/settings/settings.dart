@@ -1,8 +1,9 @@
-import 'package:deapp/settings/counter.dart';
-import 'package:deapp/settings/langague.dart';
+import 'package:deapp/widget/settings/counter.dart';
+import 'package:deapp/widget/settings/darktheme.dart';
+import 'package:deapp/widget/settings/info.dart';
+import 'package:deapp/widget/settings/show_face.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:deapp/settings/darktheme.dart';
 
 Widget sheets() {
   return BottomSheet(
@@ -33,7 +34,7 @@ Widget sheets() {
                   Container(
                     padding: EdgeInsets.all(17),
                     child: Text(
-                      "Total counter",
+                      AppLocalizations.of(context)!.total,
                       textScaleFactor: 1.5,
                     ),
                   ),
@@ -48,7 +49,7 @@ Widget sheets() {
                 Container(
                     padding: EdgeInsets.all(17),
                     child: Text(
-                      "Theme",
+                      AppLocalizations.of(context)!.theme,
                       textScaleFactor: 1.5,
                     )),
                 DarkTheme(),
@@ -63,24 +64,27 @@ Widget sheets() {
                   Container(
                     padding: EdgeInsets.all(17),
                     child: Text(
-                      "Languague",
+                      AppLocalizations.of(context)!.show,
                       textScaleFactor: 1.5,
                     ),
                   ),
-                  Language(),
+                  ShowFace(),
                 ],
               ),
               Divider(
                 thickness: 1.1,
                 color: Colors.grey,
               ),
-              Container(
-                padding: EdgeInsets.all(17),
-                child: Text(
-                  "View on Github",
-                  textScaleFactor: 1.5,
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Container(
+                  padding: EdgeInsets.all(17),
+                  child: Text(
+                    AppLocalizations.of(context)!.info,
+                    textScaleFactor: 1.5,
+                  ),
                 ),
-              ),
+                Info(),
+              ])
             ],
           ));
     },
