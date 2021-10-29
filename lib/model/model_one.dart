@@ -23,9 +23,6 @@ class One extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SidesImage(number: number[0], x: x),
-          SizedBox(
-            height: 50,
-          ),
         ],
       );
     } else {

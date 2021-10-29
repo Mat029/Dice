@@ -1,13 +1,21 @@
 {
+  "back": "Back",
+  "contact": "Contact us",
+  "day": "Set theme to light",
   "dice": "DICE",
-  "info": "App info (Beta)",
+  "info": "App info ",
   "more": "More",
   "nbdices": "Number of dices :",
   "nbsides": "Number of sides :",
+  "night": "set theme to dark",
+  "privacy": "Privacy Policy",
   "reroll": "Re-roll",
+  "review": "Put a comment",
   "roll": "Roll",
   "settings": "SETTINGS",
   "show": "Showing faces",
+  "system": "set theme to system",
   "theme": "Theme",
-  "total": "Total counter"
+  "total": "Total counter",
+  "version": "Version"
 }

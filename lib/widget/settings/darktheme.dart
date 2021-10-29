@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DarkTheme extends StatefulWidget {
   const DarkTheme({Key? key}) : super(key: key);
@@ -39,15 +40,15 @@ class _DarkThemeState extends State<DarkTheme> {
       children: <Widget>[
         Icon(
           Icons.wb_sunny,
-          semanticLabel: "Light",
+          semanticLabel: AppLocalizations.of(context)!.day,
         ),
         Icon(
           Icons.phone_android,
-          semanticLabel: "System",
+          semanticLabel: AppLocalizations.of(context)!.system,
         ),
         Icon(
           Icons.mode_night,
-          semanticLabel: "Night",
+          semanticLabel: AppLocalizations.of(context)!.night,
         )
       ],
       onPressed: (int index) {

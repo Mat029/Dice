@@ -1,6 +1,10 @@
 import 'package:deapp/widget/settings/appversion.dart';
 import 'package:deapp/widget/settings/back.dart';
+import 'package:deapp/widget/settings/mailto.dart';
+import 'package:deapp/widget/settings/privacypolicy.dart';
+import 'package:deapp/widget/settings/review.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Widget sheets2() {
   return BottomSheet(
@@ -18,7 +22,7 @@ Widget sheets2() {
                     Container(
                       padding: EdgeInsets.all(17),
                       child: Text(
-                        "Version",
+                        AppLocalizations.of(context)!.version,
                         textScaleFactor: 1.5,
                       ),
                     ),
@@ -35,10 +39,11 @@ Widget sheets2() {
                     Container(
                       padding: EdgeInsets.all(17),
                       child: Text(
-                        "Send a feedback (Not Working)",
+                        AppLocalizations.of(context)!.review,
                         textScaleFactor: 1.5,
                       ),
                     ),
+                    Review(),
                   ],
                 ),
                 Divider(
@@ -51,9 +56,10 @@ Widget sheets2() {
                       Container(
                           padding: EdgeInsets.all(17),
                           child: Text(
-                            "Contact us (Not Working)",
+                            AppLocalizations.of(context)!.contact,
                             textScaleFactor: 1.5,
                           )),
+                      SendMail(),
                     ]),
                 Divider(
                   thickness: 1.1,
@@ -65,10 +71,11 @@ Widget sheets2() {
                     Container(
                       padding: EdgeInsets.all(17),
                       child: Text(
-                        "Privacy Policy (Not Working)",
+                        AppLocalizations.of(context)!.privacy,
                         textScaleFactor: 1.5,
                       ),
                     ),
+                    PrivacyPolicy(),
                   ],
                 ),
                 Divider(
@@ -81,7 +88,7 @@ Widget sheets2() {
                       Container(
                         padding: EdgeInsets.all(17),
                         child: Text(
-                          "Back",
+                          AppLocalizations.of(context)!.back,
                           textScaleFactor: 1.5,
                         ),
                       ),

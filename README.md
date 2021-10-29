@@ -29,7 +29,6 @@ Beta (~~end of July/begin of august~~ Accepted the 6 september) :
 Realease (october/november) :
 - fix of the bugs which can appears
 - add of new tranlates languagues (including the play store screens)
-- (publications in fdroid)
 
 Devices compatility :
 

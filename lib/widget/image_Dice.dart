@@ -31,6 +31,8 @@ class _ImageDiceState extends State<ImageDice> {
       x = 0.7;
     } else if (widget.dice >= 7) {
       x = 0.28;
+    } else if (widget.dice >= 5) {
+      x = 0.40;
     } else if (widget.dice >= 3) {
       x = 0.45;
     }

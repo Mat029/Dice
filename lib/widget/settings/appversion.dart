@@ -16,7 +16,8 @@ class _AppVState extends State<AppV> {
       padding: EdgeInsets.all(17),
       child: Text(
         "Beta $appVersion",
-        textScaleFactor: 1.5,
+        textScaleFactor: 1.7,
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
     );
   }

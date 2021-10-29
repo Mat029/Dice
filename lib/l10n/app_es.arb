@@ -1,13 +1,21 @@
 {
+  "back": "Volver",
+  "contact": "Contacto",
+  "day": "Poner el tema en la luz",
   "dice": "DADO",
-  "info": "Información (Beta)",
+  "info": "Información ",
   "more": "Más",
   "nbdices": "Numero de dados :",
   "nbsides": "Numero de caras :",
+  "night": "poner el tema en la noche",
+  "privacy": "Política de privacidad",
   "reroll": "Tirar",
+  "review": "Poner una reseña",
   "roll": "Tirar",
   "settings": "CONFIGURACION",
   "show": "Mostrando las caras",
+  "system": "establecer el tema en el sistema",
   "theme": "Tema",
-  "total": "Contador total"
+  "total": "Contador total",
+  "version": "Versión"
 }

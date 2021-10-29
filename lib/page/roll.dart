@@ -67,11 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             ImageDice(sides: widget.sides, dice: widget.dice, ranNum: rannum),
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             TextButton(
               style: TextButton.styleFrom(
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SizedBox(
-              height: 25,
+              height: 30,
             ),
             Total(
               num: rannum,

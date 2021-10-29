@@ -1,13 +1,21 @@
 {
+  "back": "Retour",
+  "contact": "Nous contacter",
+  "day": "Définir le thème comme lumineux",
   "dice": "DÉ",
-  "info": "Infos sur l'app (Beta)",
+  "info": "Infos sur l'app ",
   "more": "Plus",
   "nbdices": "Nombre de dé :",
   "nbsides": "Nombre de faces",
+  "night": "paramétrer le thème sur sombre",
+  "privacy": "Politique de confidentialité",
   "reroll": "Relancer",
+  "review": "Mettre un avis",
   "roll": "Lancer",
   "settings": "PARAMETRES",
   "show": "Montrer les faces",
+  "system": "Définir le thème comme système",
   "theme": "Thème",
-  "total": "Compteur total"
+  "total": "Compteur total",
+  "version": "Version"
 }

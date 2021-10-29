@@ -1,13 +1,21 @@
 {
+  "back": "Zurück",
+  "contact": "Kontakt",
+  "day": "Thema auf Licht einstellen",
   "dice": "WÜRFEL",
-  "info": "Infos zur App (Beta)",
+  "info": "Infos zur App ",
   "more": "Mehr",
   "nbdices": "Anzahl der Würfel :",
   "nbsides": "Anzahl der Gesichter :",
+  "night": "Thema auf Nacht einstellen",
+  "privacy": "Datenschutzbestimmungen",
   "reroll": "wiederbeleben",
+  "review": "Eine Bewertung abgeben",
   "roll": "Werfen",
   "settings": "EINSTELLUNGEN",
   "show": "Die Gesichter zeigen",
+  "system": "Thema auf System setzen",
   "theme": "Thema",
-  "total": "Gesamtzähler"
+  "total": "Gesamtzähler",
+  "version": "Version"
 }
