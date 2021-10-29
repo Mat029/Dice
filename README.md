@@ -22,7 +22,7 @@ Beta (~~end of July/begin of august~~ Accepted the 6 september) :
 - ~~add language changes~~ ❌
 - add an option to showing faces ✅ (25/10 : 1.5.0)
 - style for settings ✅ (25/10 : 1.5.0)
-- add an info page
+- add an info page ✅ (30/10 : 1.6.0)
 - responsive layout
 - publish in the play store (realease)
 
