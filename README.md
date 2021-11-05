@@ -4,27 +4,27 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 
 (show 3/4 photos)
 
-### Available :
-#### Android (Android 4.4 or higer) 
+## Available :
+### Android (Android 4.4 or higer) 
 
 * See on play store (link when realease)
 * Official build [See realease](/realease) (apk)
 * Build yourself with sources
 
-#### iOS (iOS 9 or higer):
+### iOS (iOS 9 or higer):
 
 * iOS policy prevents distribution of the app outside the store 
 * At the moment, I don't have an Apple developer account so I cannot publish to iOS
 
-### Languages 
+## Languages 
 
 * English
 * French 
 * German
 * Spanish
-* (other soon available, I would like to have your help: (Work on it) (thanks to those who will take time to do so))
+* (other soon available, I would like to have your help: (Forms) (thanks to those who will take time to do so))
 
-### Features 
+## Features 
 
 * Roll dice (1 to 6 dice, 1 to 100 sides)
 * Dark theme
@@ -32,12 +32,12 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 * Some infos / customization options
 * See [Patch notes](PATCH_NOTE.md) for more info on the features we have had.
 
-### Future features
+## Future features
 
 * See the road map : [Road map](ROAD_MAP.md)
 * Give uour uggestions !!!
 
-### Money 
+## Money 
 
 * Free
 * No ads
@@ -45,18 +45,18 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 * We don't collect data [Privacy policy](https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md)
 * (this is just a learning project, I'm not looking to make money)
 
-### Device compatility 
+## Device compatility 
 
-#### Android
+### Android
 Pixel 4a ( 5,8" , api 24)
-theoretically, any 16: 9 device larger than or equal to 5.8 "(not tested)
+Theoretically, any 16: 9 device larger than or equal to 5.8 "(not tested)
 Working on the responsive layout
 
-#### iOS
+### iOS
 
-* not tested yet
+* Not tested yet
 
-### Contact
+## Contact
 
 * Send a mail to mat029studiocontact@gmail.com (preferably in english or french)
 * Put a comment on play store
