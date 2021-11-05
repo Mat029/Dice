@@ -1,38 +1,62 @@
 # Dice_app-flutter
 
-My first real app in flutter, a basic dice app.
+This app is a simple dice app, written in Flutter. This is my first app and I used it to learn flutter. 
 
-Road map :
+(show 3/4 photos)
 
-Alpha :
-- optimisation (list for random number) : ✅ (18/08 : 1.1.0)
-- add a return buton to the second screen : ✅ (july : 1.0.0)
-- new structure for optimisation: ✅ (19/08 : 1.2.0)
-- fix of two or three 100 in the same ligne ✅ (19/08 : 1.2.1/2) [fix for 5.8"]
-- add of a name, an icon, translations (english, french, german, spanish) ✅ (19/08 : 1.2.3/4/5/6 + 1.3.0)
-- ~~add new screen size compatible, with test and fix~~ (delay to beta) ❌
-- publish in the play store (private beta) ✅ (31/08 : beta 1.0.0-pre 2 )
+### Available :
+#### Android (Android 4.4 or higer) 
 
-Beta (~~end of July/begin of august~~ Accepted the 6 september) :
-- fix major bug(orientation) ✅ (06/09 : 1.0.1)
-- add a settings page ✅ (20/09 : 1.1.0/1)
-- persistent data ✅ (03/10 : 1.2.0)
-- add a total counter ✅ (05/10 : 1.3.0)
-- add a dark theme ✅ (10/10 : 1.4.0)
-- ~~add language changes~~ ❌
-- add an option to showing faces ✅ (25/10 : 1.5.0)
-- style for settings ✅ (25/10 : 1.5.0)
-- add an info page ✅ (30/10 : 1.6.0)
-- responsive layout
-- publish in the play store (realease)
+* See on play store (link when realease)
+* Official build [See realease](/realease) (apk)
+* Build yourself with sources
 
-Realease (october/november) :
-- fix of the bugs which can appears
-- add of new tranlates languagues (including the play store screens)
+#### iOS (iOS 9 or higer):
 
-Devices compatility :
+* iOS policy prevents distribution of the app outside the store 
+* At the moment, I don't have an Apple developer account so I cannot publish to iOS
 
-Android : 
+### Languages 
+
+* English
+* French 
+* German
+* Spanish
+* (other soon available, I would like to have your help: (Work on it) (thanks to those who will take time to do so))
+
+### Features 
+
+* Roll dice (1 to 6 dice, 1 to 100 sides)
+* Dark theme
+* Total counter
+* Some infos / customization options
+* See [Patch notes](PATCH_NOTE.md) for more info on the features we have had.
+
+### Future features
+
+* See the road map : [Road map](ROAD_MAP.md)
+* Give uour uggestions !!!
+
+### Money 
+
+* Free
+* No ads
+* No paid options
+* We don't collect data [Privacy policy](https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md)
+* (this is just a learning project, I'm not looking to make money)
+
+### Device compatility 
+
+#### Android
 Pixel 4a ( 5,8" , api 24)
 theoretically, any 16: 9 device larger than or equal to 5.8 "(not tested)
-Other phones soon available
+Working on the responsive layout
+
+#### iOS
+
+* not tested yet
+
+### Contact
+
+* Send a mail to mat029studiocontact@gmail.com (preferably in english or french)
+* Put a comment on play store
