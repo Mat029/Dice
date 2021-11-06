@@ -13,7 +13,7 @@ class Info extends StatelessWidget {
           shadowColor: Colors.transparent),
       onPressed: () => showModalBottomSheet(
         context: context,
-        builder: (BuildContext context) => sheets2(),
+        builder: (BuildContext context) => settings2(),
       ),
       child: Icon(
         Icons.keyboard_arrow_right,

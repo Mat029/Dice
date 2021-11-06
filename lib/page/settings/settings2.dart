@@ -1,12 +1,11 @@
-import 'package:deapp/widget/settings/appversion.dart';
-import 'package:deapp/widget/settings/back.dart';
-import 'package:deapp/widget/settings/mailto.dart';
-import 'package:deapp/widget/settings/privacypolicy.dart';
-import 'package:deapp/widget/settings/review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:launch_review/launch_review.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-Widget sheets2() {
+String appVersion = "Error";
+
+Widget settings2() {
   return BottomSheet(
       onClosing: () {},
       builder: (BuildContext context) {
@@ -26,7 +25,14 @@ Widget sheets2() {
                         textScaleFactor: 1.5,
                       ),
                     ),
-                    AppV(),
+                    Container(
+                      padding: EdgeInsets.all(17),
+                      child: Text(
+                        "Beta $appVersion",
+                        textScaleFactor: 1.7,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ],
                 ),
                 Divider(
@@ -43,7 +49,12 @@ Widget sheets2() {
                         textScaleFactor: 1.5,
                       ),
                     ),
-                    Review(),
+                    TextButton(
+                      onPressed: () {
+                        LaunchReview.launch();
+                      },
+                      child: Icon(Icons.star),
+                    ),
                   ],
                 ),
                 Divider(
@@ -59,7 +70,23 @@ Widget sheets2() {
                             AppLocalizations.of(context)!.contact,
                             textScaleFactor: 1.5,
                           )),
-                      SendMail(),
+                      TextButton(
+                        onPressed: () async {
+                          final mailto = "mat029studiocontact@gmail.com";
+                          final subject = "Contact for dice app";
+                          final message =
+                              "thanks to write you mail in english or french";
+                          final mailurl =
+                              "mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}";
+                          if (await canLaunch(mailurl)) {
+                            await launch(
+                              mailurl,
+                              forceSafariVC: false,
+                            );
+                          }
+                        },
+                        child: Icon(Icons.mail),
+                      ),
                     ]),
                 Divider(
                   thickness: 1.1,
@@ -75,7 +102,19 @@ Widget sheets2() {
                         textScaleFactor: 1.5,
                       ),
                     ),
-                    PrivacyPolicy(),
+                    TextButton(
+                      onPressed: () async {
+                        final privacyurl =
+                            "https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md";
+                        if (await canLaunch(privacyurl)) {
+                          await launch(
+                            privacyurl,
+                            forceSafariVC: false,
+                          );
+                        }
+                      },
+                      child: Icon(Icons.privacy_tip_sharp),
+                    ),
                   ],
                 ),
                 Divider(
@@ -92,7 +131,17 @@ Widget sheets2() {
                           textScaleFactor: 1.5,
                         ),
                       ),
-                      Back(),
+                      ElevatedButton(
+                        style: OutlinedButton.styleFrom(
+                            primary: Theme.of(context).hintColor,
+                            backgroundColor: Theme.of(context).primaryColorDark,
+                            shadowColor: Colors.transparent),
+                        onPressed: () => Navigator.pop(context),
+                        child: Icon(
+                          Icons.keyboard_arrow_left,
+                          size: 45,
+                        ),
+                      ),
                     ])
               ],
             ));

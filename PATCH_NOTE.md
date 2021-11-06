@@ -2,6 +2,24 @@
 
 ## Beta
 
+## Beta 1.6.1
+
+### Fix
+
+* Face with 2 points in dark mode 
+
+### Others
+
+* Minimum Api in Android is now 19 (Android 4.4)
+* Optimization
+
+### Code changes
+
+* Changes dark_two.png to a new repaired image
+* Merge widgets in settings2 (info page)
+* Android manifest : minSDK 16 --> 19
+* Better size of SizedBox in Home Page
+
 ## Beta 1.6.0
 
 ### Add  
@@ -19,7 +37,7 @@
 
 * Layout problem with 5/6 dice and total counter
 
-### Codes changes 
+### Code changes 
 
 * 3 New widget (new features, see above)
 * 2 New package (url_launcher, launch_review(deprecated api, to check))

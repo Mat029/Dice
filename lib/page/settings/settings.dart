@@ -5,7 +5,7 @@ import 'package:deapp/widget/settings/show_face.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-Widget sheets() {
+Widget settings() {
   return BottomSheet(
     onClosing: () {},
     builder: (BuildContext context) {

@@ -48,7 +48,7 @@ class _InitPageState extends State<InitPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             SizedBox(
-              height: 140,
+              height: 120,
             ),
             Text(
               AppLocalizations.of(context)!.nbdices,
@@ -72,7 +72,7 @@ class _InitPageState extends State<InitPage> {
                       _saveDice();
                     })),
             SizedBox(
-              height: 80,
+              height: 90,
             ),
             Text(
               AppLocalizations.of(context)!.nbsides,
@@ -120,7 +120,7 @@ class _InitPageState extends State<InitPage> {
                   textScaleFactor: 3,
                 )),
             SizedBox(
-              height: 70,
+              height: 90,
             ),
             ElevatedButton(
               style: OutlinedButton.styleFrom(
@@ -129,7 +129,7 @@ class _InitPageState extends State<InitPage> {
                   shadowColor: Colors.transparent),
               onPressed: () => showModalBottomSheet(
                 context: context,
-                builder: (BuildContext context) => sheets(),
+                builder: (BuildContext context) => settings(),
               ),
               child: Column(
                 children: [
