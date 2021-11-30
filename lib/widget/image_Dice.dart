@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:deapp/model/model_five.dart';
-import 'package:deapp/model/model_four.dart';
-import 'package:deapp/model/model_height.dart';
-import 'package:deapp/model/model_nine.dart';
-import 'package:deapp/model/model_seven.dart';
-import 'package:deapp/model/model_six.dart';
-import 'package:deapp/model/model_ten.dart';
-import 'package:deapp/model/model_three.dart';
-import 'package:deapp/model/model_two.dart';
-import '../model/model_one.dart';
+import 'package:deapp/model/models.dart';
 
 class ImageDice extends StatefulWidget {
   ImageDice(

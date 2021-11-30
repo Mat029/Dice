@@ -2,6 +2,14 @@
 
 ## Beta
 
+## Beta 1.6.2
+
+### Code changes
+
+* Optimise models export
+* Remove deprecated api (and warning) of android splash screen
+* Update packages
+
 ## Beta 1.6.1
 
 ### Fix

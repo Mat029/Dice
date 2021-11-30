@@ -1,7 +1,4 @@
-import 'package:deapp/widget/settings/counter.dart';
-import 'package:deapp/widget/settings/darktheme.dart';
-import 'package:deapp/widget/settings/info.dart';
-import 'package:deapp/widget/settings/show_face.dart';
+import 'package:deapp/widget/settings/settings_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

@@ -24,7 +24,8 @@
 - responsive layout
 - publish in the play store (realease)
 
-## Realease (november) 
+## Realease (2021) 
 
 - fix of the bugs which can appears
+- change rating package
 - add of new tranlates languagues (including the play store screens)
