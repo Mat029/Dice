@@ -8,7 +8,7 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 ### Android (Android 4.4 or higer) 
 
 * See on play store (link when realease)
-* Official build [See realease](/realease) (apk)
+* Official build [See realease](https://github.com/Mat029/Dice_app-flutter/releases) (apk)
 * Build yourself with sources
 
 ### iOS (iOS 9 or higer):
@@ -35,14 +35,14 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 ## Future features
 
 * See the road map : [Road map](ROAD_MAP.md)
-* Give uour uggestions !!!
+* Give your suggestions !!!
 
 ## Money 
 
 * Free
 * No ads
 * No paid options
-* We don't collect data [Privacy policy](https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md)
+* We don't collect data : [Privacy policy](https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md)
 * (this is just a learning project, I'm not looking to make money)
 
 ## Device compatility 
