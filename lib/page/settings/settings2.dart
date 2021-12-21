@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:launch_review/launch_review.dart';
+import 'package:store_redirect/store_redirect.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String appVersion = "Error";
@@ -51,7 +51,7 @@ Widget settings2() {
                     ),
                     TextButton(
                       onPressed: () {
-                        LaunchReview.launch();
+                        StoreRedirect.redirect();
                       },
                       child: Icon(Icons.star),
                     ),
@@ -132,10 +132,12 @@ Widget settings2() {
                         ),
                       ),
                       ElevatedButton(
-                        style: OutlinedButton.styleFrom(
-                            primary: Theme.of(context).hintColor,
-                            backgroundColor: Theme.of(context).primaryColorDark,
-                            shadowColor: Colors.transparent),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0.0,
+                          primary: Colors.transparent,
+                          shadowColor: Colors.black12,
+                          onPrimary: Theme.of(context).hintColor,
+                        ),
                         onPressed: () => Navigator.pop(context),
                         child: Icon(
                           Icons.keyboard_arrow_left,

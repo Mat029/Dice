@@ -2,6 +2,15 @@
 
 ## Beta
 
+## Beta 1.6.3
+
+### Code changes
+
+* Update pubsec packages
+* Change package_info (deprecated) to package_info_plus
+* Change launch_review to store_redirect to remove toast and depecated api 
+* Change Elevated button style
+
 ## Beta 1.6.2
 
 ### Code changes

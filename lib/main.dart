@@ -5,7 +5,7 @@ import 'package:deapp/page/settings/settings2.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
@@ -91,14 +91,12 @@ class _MyAppState extends State<MyApp> {
             brightness: Brightness.light,
             primaryColor: Colors.blue[400],
             hintColor: Colors.black,
-            primaryColorLight: Colors.black,
-            primaryColorDark: Colors.white12),
+            primaryColorLight: Colors.black),
         dark: ThemeData(
             brightness: Brightness.dark,
             primaryColor: Colors.blue[700],
             hintColor: Colors.white,
-            primaryColorLight: Colors.white70,
-            primaryColorDark: Colors.grey[850]),
+            primaryColorLight: Colors.white70),
         initial: AdaptiveThemeMode.system,
         builder: (theme, darktheme) => MaterialApp(
               theme: theme,

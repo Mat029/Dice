@@ -7,10 +7,12 @@ class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: OutlinedButton.styleFrom(
-          primary: Theme.of(context).hintColor,
-          backgroundColor: Theme.of(context).primaryColorDark,
-          shadowColor: Colors.transparent),
+      style: ElevatedButton.styleFrom(
+        elevation: 0.0,
+        primary: Colors.transparent,
+        shadowColor: Colors.black12,
+        onPrimary: Theme.of(context).hintColor,
+      ),
       onPressed: () => showModalBottomSheet(
         context: context,
         builder: (BuildContext context) => settings2(),

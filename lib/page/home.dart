@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:deapp/page/roll.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -123,25 +122,24 @@ class _InitPageState extends State<InitPage> {
               height: 90,
             ),
             ElevatedButton(
-              style: OutlinedButton.styleFrom(
-                  primary: Theme.of(context).hintColor,
-                  backgroundColor: Theme.of(context).primaryColorDark,
-                  shadowColor: Colors.transparent),
               onPressed: () => showModalBottomSheet(
                 context: context,
                 builder: (BuildContext context) => settings(),
               ),
               child: Column(
                 children: [
-                  Icon(
-                    Icons.keyboard_arrow_up,
-                    size: 60,
-                  ),
+                  Icon(Icons.keyboard_arrow_up, size: 60),
                   Text(
                     AppLocalizations.of(context)!.more,
                     textScaleFactor: 1.5,
                   )
                 ],
+              ),
+              style: ElevatedButton.styleFrom(
+                elevation: 0.0,
+                primary: Colors.transparent,
+                shadowColor: Colors.black12,
+                onPrimary: Theme.of(context).hintColor,
               ),
             ),
           ],
