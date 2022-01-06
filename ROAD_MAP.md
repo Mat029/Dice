@@ -10,7 +10,7 @@
 - ~~add new screen size compatible, with test and fix~~ (delay to beta) ❌
 - publish in the play store (private beta) ✅ (31/08 : beta 1.0.0-pre 2 )
 
-## Beta (~~end of July/begin of august~~ Accepted the 6 september) :
+## Beta (~~end of July/begin of august 2021 ~~ Accepted the 6 september) :
 
 - fix major bug(orientation) ✅ (06/09 : 1.0.1)
 - add a settings page ✅ (20/09 : 1.1.0/1)
@@ -21,11 +21,12 @@
 - add an option to showing faces ✅ (25/10 : 1.5.0)
 - style for settings ✅ (25/10 : 1.5.0)
 - add an info page ✅ (30/10 : 1.6.0)
-- responsive layout
-- publish in the play store (realease)
+- make the layout support all phone/tablet screen size ✅ (06/01/22 : 2.0.0)
+- publish in the play store (new : icon, store card, translated name, github docs...) (realease)
 
-## Realease (2021) 
+## Realease (~~hollydays 2021~~ january 2022) 
 
 - fix of the bugs which can appears
+- real responsive layout (including tablet)
 - change rating package
 - add of new tranlates languagues (including the play store screens)

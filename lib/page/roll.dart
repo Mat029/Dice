@@ -3,13 +3,11 @@ import 'package:deapp/widget/total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:math';
-import '../widget/image_Dice.dart';
+import 'package:deapp/model/models.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage(
-      {Key? key, required this.title, required this.dice, required this.sides})
+  MyHomePage({Key? key, required this.dice, required this.sides})
       : super(key: key);
-  final String title;
   final int dice;
   final int sides;
   @override
@@ -57,43 +55,74 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
-          widget.title,
+          AppLocalizations.of(context)!.dice,
           textAlign: TextAlign.center,
           textScaleFactor: 2,
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            SizedBox(
-              height: 30,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          ImageDice(sides: widget.sides, dice: widget.dice, ranNum: rannum),
+          ElevatedButton(
+            onPressed: _launch,
+            child: Text(
+              AppLocalizations.of(context)!.reroll,
+              textScaleFactor: 3,
             ),
-            ImageDice(sides: widget.sides, dice: widget.dice, ranNum: rannum),
-            SizedBox(
-              height: 30,
-            ),
-            TextButton(
-              style: TextButton.styleFrom(
-                  padding: EdgeInsets.fromLTRB(40, 12, 40, 12),
-                  primary: Colors.white,
-                  backgroundColor: Theme.of(context).primaryColor),
-              onPressed: _launch,
-              child: Text(
-                AppLocalizations.of(context)!.reroll,
-                textScaleFactor: 3,
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).primaryColor,
+              padding: EdgeInsets.fromLTRB(36, 12, 36, 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
-            Total(
-              num: rannum,
-              dices: nbofdice,
-            )
-          ],
-        ),
+          ),
+          Total(
+            num: rannum,
+            dices: nbofdice,
+          )
+        ],
       ),
     );
+  }
+}
+
+class ImageDice extends StatefulWidget {
+  ImageDice(
+      {Key? key, required this.sides, required this.dice, required this.ranNum})
+      : super(key: key);
+  final int sides;
+  final int dice;
+  final List<int> ranNum;
+
+  @override
+  _ImageDiceState createState() => _ImageDiceState();
+}
+
+class _ImageDiceState extends State<ImageDice> {
+  @override
+  Widget build(BuildContext context) {
+    if (widget.dice == 1) {
+      return One(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 2) {
+      return Two(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 3) {
+      return Three(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 4) {
+      return Four(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 5) {
+      return Five(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 6) {
+      return Six(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 7) {
+      return Seven(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 8) {
+      return Height(sides: widget.sides, number: widget.ranNum);
+    } else if (widget.dice == 9) {
+      return Nine(sides: widget.sides, number: widget.ranNum);
+    } else {
+      return Ten(sides: widget.sides, number: widget.ranNum);
+    }
   }
 }

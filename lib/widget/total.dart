@@ -13,22 +13,23 @@ class Total extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double cTotal = 100.0;
+    double cTotal = 60;
     int t = 0;
     for (var i = 0; i < dices; i++) {
       t += num[i];
     }
     if (t == 1000) {
-      cTotal = 200;
+      cTotal = 120;
     }
-    double xTotal = 0.28;
     if (dices > 1 && isSelected == true) {
       return Column(
         children: [
-          Sides(number: t, c: cTotal, x: xTotal),
-          SizedBox(
-            height: 30,
-          )
+          Sides(
+              number: t,
+              c: cTotal,
+              x: (MediaQuery.of(context).size.height) / 9),
+          //fix a bug where the column was on the left
+          Container(),
         ],
       );
     } else {

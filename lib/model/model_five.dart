@@ -4,20 +4,34 @@ import 'package:deapp/widget/dice_number.dart';
 import 'package:deapp/widget/dice_side.dart';
 
 class Five extends StatelessWidget {
-  const Five(
-      {Key? key,
-      required this.sides,
-      required this.c,
-      required this.x,
-      required this.number})
+  const Five({Key? key, required this.sides, required this.number})
       : super(key: key);
   final int sides;
-  final List<double> c;
-  final double x;
   final List<int> number;
 
   @override
   Widget build(BuildContext context) {
+    double taille = (MediaQuery.of(context).size.height) / 6.5;
+    double add = (MediaQuery.of(context).size.width) / 12;
+    List<double> c = [0, 0, 0, 0, 0];
+
+    if (sides == 100) {
+      if (number[0] == 100) {
+        c[0] = add;
+      }
+      if (number[1] == 100) {
+        c[1] = add;
+      }
+      if (number[2] == 100) {
+        c[2] = add;
+      }
+      if (number[3] == 100) {
+        c[3] = add;
+      }
+      if (number[4] == 100) {
+        c[4] = add;
+      }
+    }
     if (sides <= 6 && showFace == true) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,11 +39,11 @@ class Five extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SidesImage(number: number[0], x: x),
+              SidesImage(number: number[0], x: taille),
               SizedBox(
                 width: 25,
               ),
-              SidesImage(number: number[1], x: x),
+              SidesImage(number: number[1], x: taille),
             ],
           ),
           SizedBox(
@@ -38,7 +52,7 @@ class Five extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SidesImage(number: number[2], x: x),
+              SidesImage(number: number[2], x: taille),
             ],
           ),
           SizedBox(
@@ -47,11 +61,11 @@ class Five extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SidesImage(number: number[3], x: x),
+              SidesImage(number: number[3], x: taille),
               SizedBox(
                 width: 25,
               ),
-              SidesImage(number: number[4], x: x),
+              SidesImage(number: number[4], x: taille),
             ],
           ),
         ],
@@ -63,11 +77,11 @@ class Five extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Sides(number: number[0], c: c[0], x: x),
+              Sides(number: number[0], c: c[0], x: taille),
               SizedBox(
                 width: 20,
               ),
-              Sides(number: number[1], c: c[1], x: x),
+              Sides(number: number[1], c: c[1], x: taille),
             ],
           ),
           SizedBox(
@@ -76,7 +90,7 @@ class Five extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Sides(number: number[2], c: c[2], x: x),
+              Sides(number: number[2], c: c[2], x: taille),
             ],
           ),
           SizedBox(
@@ -85,11 +99,11 @@ class Five extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Sides(number: number[3], c: c[3], x: x),
+              Sides(number: number[3], c: c[3], x: taille),
               SizedBox(
                 width: 20,
               ),
-              Sides(number: number[4], c: c[4], x: x),
+              Sides(number: number[4], c: c[4], x: taille),
             ],
           ),
         ],

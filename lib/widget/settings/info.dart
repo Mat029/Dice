@@ -14,8 +14,9 @@ class Info extends StatelessWidget {
         onPrimary: Theme.of(context).hintColor,
       ),
       onPressed: () => showModalBottomSheet(
+        isScrollControlled: true,
         context: context,
-        builder: (BuildContext context) => settings2(),
+        builder: (BuildContext context) => settings2(context),
       ),
       child: Icon(
         Icons.keyboard_arrow_right,

@@ -6,34 +6,27 @@ class Sides extends StatelessWidget {
       : super(key: key);
   final int number;
   final double c;
-  final double x;
+  final double x; //height of the the box
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          width: ((220 + c) * x) + 30,
-          height: (220 * x) + 30,
-          decoration: BoxDecoration(
-            border: Border.all(
-                color: Theme.of(context).primaryColorLight,
-                width: (10 * x) + 3),
-            borderRadius: BorderRadius.circular(50 * x),
-            shape: BoxShape.rectangle,
-          ),
-          child: Align(
-            alignment: Alignment.center,
-            child: Text(
-              "$number",
-              textScaleFactor: (10.8 * x) + 1.2,
-              style: TextStyle(
-                color: Theme.of(context).primaryColorLight,
-              ),
+    return Container(
+        padding: EdgeInsets.all(10),
+        width: x + c,
+        height: x,
+        decoration: BoxDecoration(
+          border: Border.all(
+              color: Theme.of(context).primaryColorLight, width: (x / 12)),
+          borderRadius: BorderRadius.circular(15),
+          shape: BoxShape.rectangle,
+        ),
+        child: FittedBox(
+          child: Text(
+            "$number",
+            style: TextStyle(
+              color: Theme.of(context).primaryColorLight,
             ),
           ),
-        ),
-      ],
-    );
+        ));
   }
 }

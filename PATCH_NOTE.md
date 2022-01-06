@@ -2,13 +2,44 @@
 
 ## Beta
 
+## Beta 2.0.0
+
+### Add  
+
+* Responsive layout for mobile (and more reponsive for tablet)
+* Drag with bottom sheets
+
+### Changes
+
+* New style for button
+
+### Fix
+
+* Fix a fatal error with BottomSheets cause by BottomSheet widget
+
+### Code changes
+
+* Delete lot of useless parent widgets (= better performance + bugs fix)
+* Delete most of sized box to go to an adaptive layout on mobile
+* Columns : spaceBetween to spaceAround/spaceEvenly
+* Add sized box with MediaQuerry to fit with the devices
+* Replace all empty space in bottom sheets by padding
+* Context is now give to the widget
+* Optimization in the calculation of the theme to show
+* Merge Image_Dice in roll.dart
+* Lot of optimization for the calculation of the var "c"
+* Use of MediaQuerri proportion to calculate the size of the box
+* Use fittedBox with padding to the text size fit with box
+* Text button --> Elevated button
+* Update gradle version(4.1.0 --> 7.0.4)
+
 ## Beta 1.6.3
 
 ### Code changes
 
 * Update pubsec packages
 * Change package_info (deprecated) to package_info_plus
-* Change launch_review to store_redirect to remove toast and depecated api 
+* Change launch_review to store_redirect to remove toast
 * Change Elevated button style
 
 ## Beta 1.6.2

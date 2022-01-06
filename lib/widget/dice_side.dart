@@ -26,24 +26,19 @@ class SidesImage extends StatelessWidget {
       "dark_five.png",
       "dark_six.png"
     ];
-    if (themeOption[2] == true) {
+    if ((themeOption[2] == true) |
+        (themeOption[1] == true &&
+            MediaQuery.of(context).platformBrightness == Brightness.dark)) {
       return Image.asset(
         "image/" + imageArrayDark[number - 1],
-        height: (175 * x) + 25,
-        width: (175 * x) + 25,
-      );
-    } else if (themeOption[1] == true &&
-        MediaQuery.of(context).platformBrightness == Brightness.dark) {
-      return Image.asset(
-        "image/" + imageArrayDark[number - 1],
-        height: (175 * x) + 25,
-        width: (175 * x) + 25,
+        height: x,
+        width: x,
       );
     } else {
       return Image.asset(
         "image/" + imageArrayLight[number - 1],
-        height: (175 * x) + 25,
-        width: (175 * x) + 25,
+        height: x,
+        width: x,
       );
     }
   }

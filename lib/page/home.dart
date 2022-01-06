@@ -9,11 +9,7 @@ class Base extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [InitPage()],
-        ),
-      ),
+      body: InitPage(),
     );
   }
 }
@@ -44,10 +40,10 @@ class _InitPageState extends State<InitPage> {
           valueIndicatorColor: Theme.of(context).primaryColor,
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             SizedBox(
-              height: 120,
+              height: (MediaQuery.of(context).size.height) / 14,
             ),
             Text(
               AppLocalizations.of(context)!.nbdices,
@@ -55,9 +51,6 @@ class _InitPageState extends State<InitPage> {
               style: TextStyle(
                 fontWeight: FontWeight.w900,
               ),
-            ),
-            SizedBox(
-              height: 10,
             ),
             Slider(
                 activeColor: Theme.of(context).primaryColor,
@@ -70,16 +63,10 @@ class _InitPageState extends State<InitPage> {
                       nbofdice = value.toInt();
                       _saveDice();
                     })),
-            SizedBox(
-              height: 90,
-            ),
             Text(
               AppLocalizations.of(context)!.nbsides,
               style: TextStyle(fontWeight: FontWeight.w900),
               textScaleFactor: 2.75,
-            ),
-            SizedBox(
-              height: 10,
             ),
             Slider(
                 activeColor: Theme.of(context).primaryColor,
@@ -92,39 +79,34 @@ class _InitPageState extends State<InitPage> {
                       nbofsides = value.toInt();
                       _saveSide();
                     })),
-            SizedBox(
-              height: 90,
-            ),
-            TextButton(
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.fromLTRB(40, 12, 40, 12),
-                  backgroundColor: Theme.of(context).primaryColor,
-                  primary: Colors.white,
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MyHomePage(dice: nbofdice, sides: nbofsides);
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                AppLocalizations.of(context)!.roll,
+                textScaleFactor: 3,
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Theme.of(context).primaryColor,
+                padding: EdgeInsets.fromLTRB(36, 12, 36, 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MyHomePage(
-                            title: AppLocalizations.of(context)!.dice,
-                            dice: nbofdice,
-                            sides: nbofsides);
-                      },
-                    ),
-                  );
-                },
-                child: Text(
-                  AppLocalizations.of(context)!.roll,
-                  textScaleFactor: 3,
-                )),
-            SizedBox(
-              height: 90,
+              ),
             ),
             ElevatedButton(
               onPressed: () => showModalBottomSheet(
+                isScrollControlled: true,
                 context: context,
-                builder: (BuildContext context) => settings(),
+                builder: (BuildContext context) => settings(context),
               ),
               child: Column(
                 children: [
@@ -142,6 +124,10 @@ class _InitPageState extends State<InitPage> {
                 onPrimary: Theme.of(context).hintColor,
               ),
             ),
+            // Verify on the next play store update if it's needed
+            // SizedBox(
+            //   height: MediaQuery.of(context).viewInsets.bottom,
+            // ),
           ],
         ),
       );

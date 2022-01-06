@@ -48,9 +48,8 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 ## Device compatility 
 
 ### Android
-* Pixel 4a ( 5,8" , api 24)
-* Theoretically, any 16: 9 device larger than or equal to 5.8 "(not tested)
-* Working on the responsive layout
+* Android 4.4 and higher
+* Mobile (min 3"7) and tablet (not fully optimized for, but fully functional)
 
 ### iOS
 
