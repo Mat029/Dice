@@ -30,7 +30,7 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 * Dark theme
 * Total counter
 * Some infos / customization options
-* See [Patch notes](PATCH_NOTE.md) for more info on the features we have had.
+* See [Patch notes](CHANGES.md) for more info on the features we have had.
 
 ## Future features
 

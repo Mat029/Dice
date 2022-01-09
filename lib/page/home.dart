@@ -124,10 +124,6 @@ class _InitPageState extends State<InitPage> {
                 onPrimary: Theme.of(context).hintColor,
               ),
             ),
-            // Verify on the next play store update if it's needed
-            // SizedBox(
-            //   height: MediaQuery.of(context).viewInsets.bottom,
-            // ),
           ],
         ),
       );

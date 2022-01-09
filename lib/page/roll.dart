@@ -21,16 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    rannum[0] = 1 + random.nextInt(widget.sides);
-    rannum[1] = 1 + random.nextInt(widget.sides);
-    rannum[2] = 1 + random.nextInt(widget.sides);
-    rannum[3] = 1 + random.nextInt(widget.sides);
-    rannum[4] = 1 + random.nextInt(widget.sides);
-    rannum[5] = 1 + random.nextInt(widget.sides);
-    rannum[6] = 1 + random.nextInt(widget.sides);
-    rannum[7] = 1 + random.nextInt(widget.sides);
-    rannum[8] = 1 + random.nextInt(widget.sides);
-    rannum[9] = 1 + random.nextInt(widget.sides);
+    _launch();
   }
 
   void _launch() {

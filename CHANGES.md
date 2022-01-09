@@ -1,6 +1,17 @@
 # PATCH NOTE
 
-## Beta
+# Beta
+
+## Beta 2.0.1
+
+### Others
+
+* Change app icon
+* Maybe the last code update before official release
+
+### Code changes
+
+* Clean up some code
 
 ## Beta 2.0.0
 
