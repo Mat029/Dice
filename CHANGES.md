@@ -2,6 +2,14 @@
 
 # Beta
 
+## Beta 2.0.2
+
+### Others
+
+* Icon with round edge
+* Display name is now traduct in every supported languages
+* Last update before realease !!!
+
 ## Beta 2.0.1
 
 ### Others

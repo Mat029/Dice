@@ -22,7 +22,7 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 * French 
 * German
 * Spanish
-* (other soon available, I would like to have your help: (Forms) (thanks to those who will take time to do so))
+* (Other soon avalaible, don't hesitate to make a pull request to add new languagues support)
 
 ## Features 
 
@@ -43,7 +43,7 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 * No ads
 * No paid options
 * We don't collect data : [Privacy policy](https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md)
-* (this is just a learning project, I'm not looking to make money)
+* (This is just a learning project, I'm not looking to make money)
 
 ## Device compatility 
 
@@ -54,6 +54,10 @@ This app is a simple dice app, written in Flutter. This is my first app and I us
 ### iOS
 
 * Not tested yet
+
+### Issues 
+
+* Display name is not translated on ios
 
 ## Contact
 
