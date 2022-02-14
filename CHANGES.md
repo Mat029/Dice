@@ -1,104 +1,113 @@
 # PATCH NOTE
 
-# Beta
+# Release :
+
+## 1.0.0 :
+
+### Other :
+
+* Updated the docs (added Contributing.md)
+* Removed "Beta" from the version display
+* Updated translations
+
+## Beta
 
 ## Beta 2.0.2
 
-### Others
+### Other
 
-* Icon with round edge
-* Display name is now traduct in every supported languages
-* Last update before realease !!!
+* Icon with round border
+* The display name is now translated into all supported languages.
+* Last update before realease!
 
 ## Beta 2.0.1
 
-### Others
+### Other
 
-* Change app icon
-* Maybe the last code update before official release
+* Changed the application icon
+* Maybe the last code update before the official release
 
 ### Code changes
 
-* Clean up some code
+* Clean up of some code
 
 ## Beta 2.0.0
 
 ### Add  
 
-* Responsive layout for mobile (and more reponsive for tablet)
-* Drag with bottom sheets
+* Mobile responsive layout (and more responsive for tablets)
+* Drag and drop with the bottom sheets
 
 ### Changes
 
-* New style for button
+* New style for buttons
 
 ### Fix
 
-* Fix a fatal error with BottomSheets cause by BottomSheet widget
+* Fixed a fatal error with BottomSheets caused by the BottomSheet widget.
 
 ### Code changes
 
-* Delete lot of useless parent widgets (= better performance + bugs fix)
-* Delete most of sized box to go to an adaptive layout on mobile
-* Columns : spaceBetween to spaceAround/spaceEvenly
-* Add sized box with MediaQuerry to fit with the devices
-* Replace all empty space in bottom sheets by padding
-* Context is now give to the widget
-* Optimization in the calculation of the theme to show
-* Merge Image_Dice in roll.dart
-* Lot of optimization for the calculation of the var "c"
-* Use of MediaQuerri proportion to calculate the size of the box
-* Use fittedBox with padding to the text size fit with box
+* Removed many unnecessary parent widgets (= better performance + bug fixes)
+* Removed most size boxes to switch to mobile adaptive layout
+* Columns: spaceBetween to spaceAround/spaceEvenly
+* Added size boxes with MediaQuerry to accommodate devices.
+* Replaced all empty spaces in bottom sheets with padding
+* Context is now given to the widget.
+* Optimisation in the calculation of the theme to show
+* Merge Image_Dice into roll.dart
+* A lot of optimisation in the calculation of the var "c".
+* Use of fittedBox with padding to make the text size fit the box
 * Text button --> Elevated button
-* Update gradle version(4.1.0 --> 7.0.4)
+* Updated gradle version (4.1.0 --> 7.0.4)
 
 ## Beta 1.6.3
 
 ### Code changes
 
-* Update pubsec packages
-* Change package_info (deprecated) to package_info_plus
-* Change launch_review to store_redirect to remove toast
-* Change Elevated button style
+* Updated pubspec packages
+* Changed package_info (deprecated) to package_info_plus.
+* Changed launch_review to store_redirect to remove toast.
+* Changed the style of the Elevated button
 
 ## Beta 1.6.2
 
 ### Code changes
 
-* Optimise models export
-* Remove deprecated api (and warning) of android splash screen
-* Update packages
+* Optimisation of models export
+* Removed deprecated api (and warning) from android home screen
+* Updated packages
 
 ## Beta 1.6.1
 
 ### Fix
 
-* Face with 2 points in dark mode 
+* Face with 2 dots in dark mode 
 
-### Others
+### Other
 
 * Minimum Api in Android is now 19 (Android 4.4)
-* Optimization
+* Optimisation
 
 ### Code changes
 
-* Changes dark_two.png to a new repaired image
+* Change dark_two.png to a new fixed image
 * Merge widgets in settings2 (info page)
-* Android manifest : minSDK 16 --> 19
-* Better size of SizedBox in Home Page
+* Android Manifest: minSDK 16 --> 19
+* Better size of SizedBox in homepage.
 
 ## Beta 1.6.0
 
 ### Add  
 
-* Button to put a review on store
-* Button to send a mail of feedback
-* Button to see privacy policy
+* Button to put a comment on the store
+* Button to send a mail
+* Button to view the privacy policy
 
 ### Changes 
 
-* Translation for semantics label (theme)
-* Font of the version
+* Translation of the semantic label (theme)
+* Version font
 
 ### Fix 
 
@@ -107,24 +116,24 @@
 ### Code changes 
 
 * 3 New widget (new features, see above)
-* 2 New package (url_launcher, launch_review(deprecated api, to check))
+* 2 new packages (url_launcher, launch_review(deprecated api, to be checked))
 * New translations (l10n files)
 * Android and iOS manifest to support new features
-* Merge total_counter and total (optimisation)
+* Merge of total_counter and total (optimisation)
 
 ## Beta 1.5.0
 
 ### Add  
 
-* Button to disable showing of faces
-* Info page with version and back button (other coming for 1.6.0)
+* Button to disable face display
+* Info page with version and back button (more planned for 1.6.0)
 
-### Remove
+### Delete
 
-* Languague changes (remove forever)
+* Language changes (permanently removed)
 
 ### Changes
 
-* New design to Theme button (Icons)
+* New design for Theme button (icons)
 * Translations for settings
-* New folder for pages (code feature)
+* New folder for pages (code functionality)

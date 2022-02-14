@@ -47,7 +47,7 @@ class _InitPageState extends State<InitPage> {
             ),
             Text(
               AppLocalizations.of(context)!.nbdices,
-              textScaleFactor: 2.75,
+              textScaleFactor: 2.5,
               style: TextStyle(
                 fontWeight: FontWeight.w900,
               ),
@@ -66,7 +66,7 @@ class _InitPageState extends State<InitPage> {
             Text(
               AppLocalizations.of(context)!.nbsides,
               style: TextStyle(fontWeight: FontWeight.w900),
-              textScaleFactor: 2.75,
+              textScaleFactor: 2.5,
             ),
             Slider(
                 activeColor: Theme.of(context).primaryColor,

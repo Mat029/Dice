@@ -22,7 +22,7 @@ Widget settings2(context) {
           Container(
             padding: EdgeInsets.only(right: 17),
             child: Text(
-              "Beta $appVersion",
+              "$appVersion",
               textScaleFactor: 1.7,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),

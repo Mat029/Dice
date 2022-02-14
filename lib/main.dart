@@ -112,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                 Locale('en', ''),
                 Locale('es', ''),
                 Locale("fr", ""),
-                Locale("de", "")
+                Locale("de", ""),
               ],
               home: Base(),
             ));
