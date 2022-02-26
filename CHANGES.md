@@ -2,6 +2,20 @@
 
 # Release :
 
+## 1.0.1 :
+
+### Fix
+
+* Fix rare issue with text in homepage
+
+### Other
+
+* Update translation
+* Update credits
+* Update packages
+* Update kotlin version used (1.3.50 ---> 1.6.10)
+* Update Gradle version ( 7.2 ---> 7.4)
+
 ## 1.0.0 :
 
 ### Other :
@@ -59,7 +73,7 @@
 * A lot of optimisation in the calculation of the var "c".
 * Use of fittedBox with padding to make the text size fit the box
 * Text button --> Elevated button
-* Updated gradle version (4.1.0 --> 7.0.4)
+* Updated gradle version (4.1.0 ---> 7.0.4)
 
 ## Beta 1.6.3
 

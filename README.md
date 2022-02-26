@@ -58,14 +58,7 @@
 ### Android (Android 4.4 or higer) 
 
 
-<a href="https://play.google.com/store/apps/details?id=com.mat029studio.dice">
-    <img
-        alt="Get it on Google Play"
-        src="image/download_google_play.png"
-        width="450"
-        height="130"
-    />
-</a>
+<a href='https://play.google.com/store/apps/details?id=com.mat029studio.dice&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
 
 * Official version [See release](https://github.com/Mat029/Dice/releases) (apk)
@@ -94,3 +87,4 @@
 
 * Thanks to previewed app for store mockucp, I use this template as a base : https://previewed.app/template/6942AF31
 * Thanks to all package creators !!! 
+* Google Play and the Google Play logo are trademarks of Google LLC.

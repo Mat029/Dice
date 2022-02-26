@@ -45,13 +45,16 @@ class _InitPageState extends State<InitPage> {
             SizedBox(
               height: (MediaQuery.of(context).size.height) / 14,
             ),
-            Text(
-              AppLocalizations.of(context)!.nbdices,
-              textScaleFactor: 2.5,
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-              ),
-            ),
+            Container(
+                width: (MediaQuery.of(context).size.width),
+                height: (MediaQuery.of(context).size.height) / 14,
+                padding: EdgeInsets.all(4),
+                child: FittedBox(
+                    child: Text(
+                  AppLocalizations.of(context)!.nbdices,
+                  style: TextStyle(fontWeight: FontWeight.w900),
+                  textScaleFactor: 2.5,
+                ))),
             Slider(
                 activeColor: Theme.of(context).primaryColor,
                 value: nbofdice.ceilToDouble(),
@@ -63,11 +66,16 @@ class _InitPageState extends State<InitPage> {
                       nbofdice = value.toInt();
                       _saveDice();
                     })),
-            Text(
-              AppLocalizations.of(context)!.nbsides,
-              style: TextStyle(fontWeight: FontWeight.w900),
-              textScaleFactor: 2.5,
-            ),
+            Container(
+                width: (MediaQuery.of(context).size.width),
+                height: (MediaQuery.of(context).size.height) / 14,
+                padding: EdgeInsets.all(4),
+                child: FittedBox(
+                    child: Text(
+                  AppLocalizations.of(context)!.nbsides,
+                  style: TextStyle(fontWeight: FontWeight.w900),
+                  textScaleFactor: 2.5,
+                ))),
             Slider(
                 activeColor: Theme.of(context).primaryColor,
                 value: nbofsides.toDouble(),
