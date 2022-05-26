@@ -31,7 +31,7 @@
 
 * This is my first app and I used it to learn flutter. 
 * If you have ideas to improve the app, look in [Contribution](CONTRIBUTING.md)
-* Requirement : flutter >= 2.8.1 
+* Requirement : flutter >= 3.0.0
 
 ## Features :
 

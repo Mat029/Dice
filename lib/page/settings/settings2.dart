@@ -78,13 +78,10 @@ Widget settings2(context) {
               final mailto = "mat029studiocontact@gmail.com";
               final subject = "Contact for dice app";
               final message = "thanks to write you mail in english or french";
-              final mailurl =
-                  "mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}";
-              if (await canLaunch(mailurl)) {
-                await launch(
-                  mailurl,
-                  forceSafariVC: false,
-                );
+              final Uri mailurl = Uri.parse(
+                  "mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}");
+              if (await canLaunchUrl(mailurl)) {
+                await launchUrl(mailurl);
               }
             },
             child: Icon(Icons.mail),
@@ -112,13 +109,10 @@ Widget settings2(context) {
             padding: EdgeInsets.only(right: 17),
             child: TextButton(
               onPressed: () async {
-                final privacyurl =
-                    "https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md";
-                if (await canLaunch(privacyurl)) {
-                  await launch(
-                    privacyurl,
-                    forceSafariVC: false,
-                  );
+                final Uri privacyurl = Uri.parse(
+                    "https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md");
+                if (await canLaunchUrl(privacyurl)) {
+                  await launchUrl(privacyurl);
                 }
               },
               child: Icon(Icons.privacy_tip_sharp),

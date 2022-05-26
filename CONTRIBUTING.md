@@ -1,8 +1,8 @@
 # CONTRIBUTING
 
-### 1. [Bug/crash](#report-an-issue-or-a-crash)
-### 2. [Feature](#feature-idea)
-### 3. [Pull request](#making-a-pull-request-pr)
+### 1. [Bug/crash](#report-a-bug-or-crash)
+### 2. [Feature](#idea-of-feature)
+### 3. [Pull request](#make-a-pull-request-(pr))
 ### 4. [Language](#add-a-language)
 
 # Report a bug or crash
@@ -21,7 +21,7 @@
     * Image or video (optional)
 
 
-#  Idea of feature(s) :
+#  Idea of feature :
 
 * Create an issue : [ Click here](https://github.com/Mat029/Dice/issues/news)
 

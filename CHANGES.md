@@ -2,13 +2,21 @@
 
 # Release :
 
+## 1.0.2 :
+
+### Other :
+
+* Update packages
+* Update to flutter 3
+* Update targetAndroidVersion (30 ---> 31)
+
 ## 1.0.1 :
 
 ### Fix
 
 * Fix rare issue with text in homepage
 
-### Other
+### Other :
 
 * Update translation
 * Update credits
