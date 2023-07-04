@@ -28,5 +28,5 @@
 
 - correction of bugs that may appear
 - real responsive layout (including tablet)
-- change of the notation package
+- change of the notation package ✅ (04/07/23 : 1.0.3)
 - added new translation languages (including play store screens)

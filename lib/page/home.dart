@@ -103,7 +103,7 @@ class _InitPageState extends State<InitPage> {
                 textScaleFactor: 3,
               ),
               style: ElevatedButton.styleFrom(
-                primary: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).primaryColor,
                 padding: EdgeInsets.fromLTRB(36, 12, 36, 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -126,10 +126,10 @@ class _InitPageState extends State<InitPage> {
                 ],
               ),
               style: ElevatedButton.styleFrom(
+                foregroundColor: Theme.of(context).hintColor,
+                backgroundColor: Colors.transparent,
                 elevation: 0.0,
-                primary: Colors.transparent,
                 shadowColor: Colors.black12,
-                onPrimary: Theme.of(context).hintColor,
               ),
             ),
           ],

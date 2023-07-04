@@ -2,6 +2,16 @@
 
 # Release :
 
+## 1.0.3 :
+
+### Other :
+
+* Update packages (replace store package)
+* Update kotlin version used (1.6.10 ---> 1.8.20)
+* Update Gradle version ( 7.2 ---> 7.4)
+* Move tardgetSdkVersion to flutter.targetSdkVersion
+* Remove deprecated propreties
+
 ## 1.0.2 :
 
 ### Other :

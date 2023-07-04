@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               textScaleFactor: 3,
             ),
             style: ElevatedButton.styleFrom(
-              primary: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).primaryColor,
               padding: EdgeInsets.fromLTRB(36, 12, 36, 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),

@@ -8,10 +8,10 @@ class Info extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        foregroundColor: Theme.of(context).hintColor,
+        backgroundColor: Colors.transparent,
         elevation: 0.0,
-        primary: Colors.transparent,
         shadowColor: Colors.black12,
-        onPrimary: Theme.of(context).hintColor,
       ),
       onPressed: () => showModalBottomSheet(
         isScrollControlled: true,

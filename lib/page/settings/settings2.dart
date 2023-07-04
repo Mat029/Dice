@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:store_redirect/store_redirect.dart';
+import 'package:open_store/open_store.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String appVersion = "Error";
@@ -50,7 +50,10 @@ Widget settings2(context) {
             padding: EdgeInsets.only(right: 17),
             child: TextButton(
               onPressed: () {
-                StoreRedirect.redirect();
+                OpenStore.instance.open(
+                  //TODO : Add ios app if needed
+                  androidAppBundleId: 'com.mat029studio.dice',
+                );
               },
               child: Icon(Icons.star),
             ),
@@ -78,8 +81,8 @@ Widget settings2(context) {
               final mailto = "mat029studiocontact@gmail.com";
               final subject = "Contact for dice app";
               final message = "thanks to write you mail in english or french";
-              final Uri mailurl = Uri.parse(
-                  "mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}");
+              final Uri mailurl =
+                  Uri.parse("mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}");
               if (await canLaunchUrl(mailurl)) {
                 await launchUrl(mailurl);
               }
@@ -109,8 +112,8 @@ Widget settings2(context) {
             padding: EdgeInsets.only(right: 17),
             child: TextButton(
               onPressed: () async {
-                final Uri privacyurl = Uri.parse(
-                    "https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md");
+                final Uri privacyurl =
+                    Uri.parse("https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md");
                 if (await canLaunchUrl(privacyurl)) {
                   await launchUrl(privacyurl);
                 }
@@ -139,10 +142,10 @@ Widget settings2(context) {
           padding: EdgeInsets.only(right: 17),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
+              foregroundColor: Theme.of(context).hintColor,
+              backgroundColor: Colors.transparent,
               elevation: 0.0,
-              primary: Colors.transparent,
               shadowColor: Colors.black12,
-              onPrimary: Theme.of(context).hintColor,
             ),
             onPressed: () => Navigator.pop(context),
             child: Icon(

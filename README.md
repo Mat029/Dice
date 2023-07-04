@@ -8,8 +8,6 @@
   <p align="center">
     A simple dice app build with flutter. Design for mobile (Android an iOS).
     <br />
-    <a href="https://github.com/Mat029/Dice">View Demo</a>
-    ·
     <a href="https://github.com/Mat029/Dice/issues">Report Bug</a>
     ·
     <a href="https://github.com/Mat029/Dice/issues">Request Feature</a>
