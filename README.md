@@ -29,7 +29,7 @@
 
 * This is my first app and I used it to learn flutter. 
 * If you have ideas to improve the app, look in [Contribution](CONTRIBUTING.md)
-* Requirement : flutter >= 3.0.0
+* Requirement : flutter >= 3.29
 
 ## Features :
 
@@ -37,12 +37,12 @@
 * Dark theme
 * Total counter
 * Some infos / customization options
-* See [Patch notes](CHANGES.md) for more information on the features we have added.
+* See [Patch notes](CHANGES.md) for more information on the features I have added.
 
 ## Future features
 
 * See the roadmap : [Road map](ROAD_MAP.md)
-* Give your suggestions ([Contribution](CONTRIBUTING.md)) !!!
+* Give your suggestions ([Contribution](CONTRIBUTING.md))
 
 ## Money 
 
@@ -50,7 +50,6 @@
 * No ads
 * No paid options
 * We do not collect data : [Privacy policy](https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md)
-* (This is just a learning project, I'm not looking to make money)
 
 ## Available :
 ### Android (Android 4.4 or higer) 

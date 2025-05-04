@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:deapp/widget/settings/settings_export.dart';
 import 'package:deapp/page/home.dart';
 import 'package:deapp/page/settings/settings2.dart';
-import 'package:flutter/services.dart';
+import "package:deapp/l10n/app_localizations.dart";
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
@@ -53,11 +53,8 @@ class _MyAppState extends State<MyApp> {
   _getTheme() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      themeOption = (prefs
-              .getStringList('theme')
-              ?.map((e) => e == 'true' ? true : false)
-              .toList() ??
-          [false, true, false]);
+      themeOption =
+          (prefs.getStringList('theme')?.map((e) => e == 'true' ? true : false).toList() ?? [false, true, false]);
       themeInt = prefs.getInt('themeInt') ?? 0;
     });
   }
@@ -85,16 +82,22 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitUp]);
     return AdaptiveTheme(
         light: ThemeData(
             brightness: Brightness.light,
             primaryColor: Colors.blue[400],
+            iconTheme: IconThemeData(color: Colors.blue[400]),
+            toggleButtonsTheme:
+                ToggleButtonsThemeData(selectedColor: Colors.blue[400], fillColor: Colors.blue[400]?.withAlpha(70)),
             hintColor: Colors.black,
             primaryColorLight: Colors.black),
         dark: ThemeData(
             brightness: Brightness.dark,
             primaryColor: Colors.blue[700],
+            iconTheme: IconThemeData(color: Colors.blue[700]),
+            toggleButtonsTheme:
+                ToggleButtonsThemeData(selectedColor: Colors.blue[700], fillColor: Colors.blue[700]?.withAlpha(70)),
             hintColor: Colors.white,
             primaryColorLight: Colors.white70),
         initial: AdaptiveThemeMode.system,

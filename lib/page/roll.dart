@@ -1,13 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:deapp/page/home.dart';
 import 'package:deapp/widget/total.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:deapp/l10n/app_localizations.dart";
 import 'dart:math';
 import 'package:deapp/model/models.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.dice, required this.sides})
-      : super(key: key);
+  MyHomePage({Key? key, required this.dice, required this.sides}) : super(key: key);
   final int dice;
   final int sides;
   @override
@@ -41,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final Size deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           AppLocalizations.of(context)!.dice,
           textAlign: TextAlign.center,
-          textScaleFactor: 2,
+          style: TextStyle(fontSize: deviceSize.width / 11, fontWeight: FontWeight.w900, fontStyle: FontStyle.italic),
         ),
       ),
       body: Column(
@@ -59,13 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: _launch,
             child: Text(
               AppLocalizations.of(context)!.reroll,
-              textScaleFactor: 3,
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: deviceSize.width / 11),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: Theme.of(context).primaryColor,
               padding: EdgeInsets.fromLTRB(36, 12, 36, 12),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(deviceSize.width / 18),
               ),
             ),
           ),
@@ -80,9 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class ImageDice extends StatefulWidget {
-  ImageDice(
-      {Key? key, required this.sides, required this.dice, required this.ranNum})
-      : super(key: key);
+  ImageDice({Key? key, required this.sides, required this.dice, required this.ranNum}) : super(key: key);
   final int sides;
   final int dice;
   final List<int> ranNum;

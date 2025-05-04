@@ -2,7 +2,7 @@
 
 ### 1. [Bug/crash](#report-a-bug-or-crash)
 ### 2. [Feature](#idea-of-feature)
-### 3. [Pull request](#make-a-pull-request-(pr))
+### 3. [Pull request](#make-a-pull-request)
 ### 4. [Language](#add-a-language)
 
 # Report a bug or crash
@@ -21,7 +21,7 @@
     * Image or video (optional)
 
 
-#  Idea of feature :
+#  Idea of feature
 
 * Create an issue : [ Click here](https://github.com/Mat029/Dice/issues/news)
 
@@ -30,7 +30,7 @@
 * Provide a comprehensible description of your idea (you can of course add images)
 
 
-# Make a Pull Request (PR)
+# Make a Pull Request
 
 * Make changes on a **separate branch** with a meaningful name. You may then send your changes as a pull request (PR) on GitHub.
 * Please **test** (compile and run) your code before submitting changes!

@@ -24,10 +24,7 @@ class Total extends StatelessWidget {
     if (dices > 1 && isSelected == true) {
       return Column(
         children: [
-          Sides(
-              number: t,
-              c: cTotal,
-              x: (MediaQuery.of(context).size.height) / 9),
+          Sides(number: t, c: cTotal, x: (MediaQuery.of(context).size.height) / 9),
           //fix a bug where the column was on the left
           Container(),
         ],

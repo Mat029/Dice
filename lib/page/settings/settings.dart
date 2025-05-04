@@ -1,8 +1,12 @@
-import 'package:deapp/widget/settings/settings_export.dart';
+import 'package:deapp/page/settings/settings2.dart';
+import 'package:deapp/widget/settings/settings_divider.dart';
+import 'package:deapp/widget/settings/settings_row.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:deapp/widget/settings/settings_export.dart';
+import 'package:deapp/l10n/app_localizations.dart';
 
 Widget settings(context) {
+  final Size deviceSize = MediaQuery.of(context).size;
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: [
@@ -11,94 +15,31 @@ Widget settings(context) {
         child: Text(
           AppLocalizations.of(context)!.settings,
           textAlign: TextAlign.center,
-          textScaleFactor: 1.7,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: deviceSize.width / 12),
         ),
       ),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.total,
-              textScaleFactor: 1.5,
+      SettingsDivider(),
+      SettingsRow(deviceSize, AppLocalizations.of(context)!.total, Counter()),
+      SettingsDivider(),
+      SettingsRow(deviceSize, AppLocalizations.of(context)!.theme, DarkTheme()),
+      SettingsDivider(),
+      SettingsRow(deviceSize, AppLocalizations.of(context)!.show, ShowFace()),
+      SettingsDivider(),
+      SettingsRow(
+          deviceSize,
+          AppLocalizations.of(context)!.info,
+          IconButton(
+            onPressed: () => showModalBottomSheet(
+              isScrollControlled: true,
+              context: context,
+              builder: (BuildContext context) => settings2(context),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 25),
-            child: Counter(),
-          ),
-        ],
-      ),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.theme,
-              textScaleFactor: 1.5,
-            )),
-        Container(
-          padding: EdgeInsets.only(right: 25),
-          child: DarkTheme(),
-        ),
-      ]),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.show,
-              textScaleFactor: 1.5,
+            icon: Icon(
+              Icons.keyboard_arrow_right,
+              size: deviceSize.width / 7,
+              color: Theme.of(context).hintColor,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 25),
-            child: ShowFace(),
-          ),
-        ],
-      ),
-      Divider(
-          thickness: 1.1,
-          color: Colors.grey,
-          endIndent: 17,
-          height: 0,
-          indent: 17),
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Container(
-          padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-          child: Text(
-            AppLocalizations.of(context)!.info,
-            textScaleFactor: 1.5,
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(right: 25),
-          child: Info(),
-        ),
-      ])
+          )),
     ],
   );
 }

@@ -2,6 +2,22 @@
 
 # Release :
 
+## 1.1.0 :
+
+### Change :
+
+* Slight design refresh to match material 3
+* Improve responsiveness
+
+### Other :
+
+* Update packages (delete store package)
+* Udate kotlin and Gradle (2.1.10 and 8.14)
+* Update android gradle files to meeet new flutter standard 
+* Update to flutter 3.29
+* Refactor Settings 
+
+
 ## 1.0.3 :
 
 ### Other :

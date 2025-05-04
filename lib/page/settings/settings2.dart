@@ -1,116 +1,70 @@
+import 'dart:io';
+import 'package:deapp/widget/settings/settings_divider.dart';
+import 'package:deapp/widget/settings/settings_row.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:open_store/open_store.dart';
+import 'package:deapp/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String appVersion = "Error";
+String androidAppBundleId = "com.mat029studio.dice";
+//TODO : Add ios app if needed
+String appstoreAppId = "";
 
 Widget settings2(context) {
+  final Size deviceSize = MediaQuery.of(context).size;
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.version,
-              textScaleFactor: 1.5,
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 17),
-            child: Text(
-              "$appVersion",
-              textScaleFactor: 1.7,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
-        ],
-      ),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.review,
-              textScaleFactor: 1.5,
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 17),
-            child: TextButton(
-              onPressed: () {
-                OpenStore.instance.open(
-                  //TODO : Add ios app if needed
-                  androidAppBundleId: 'com.mat029studio.dice',
-                );
-              },
-              child: Icon(Icons.star),
-            ),
-          ),
-        ],
-      ),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.contact,
-              textScaleFactor: 1.5,
-            )),
-        Container(
-          padding: EdgeInsets.only(right: 17),
-          child: TextButton(
+      SettingsRow(
+          deviceSize,
+          AppLocalizations.of(context)!.version,
+          Text(
+            "$appVersion",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: deviceSize.width / 16),
+          )),
+      SettingsDivider(),
+      SettingsRow(
+          deviceSize,
+          AppLocalizations.of(context)!.review,
+          IconButton(
             onPressed: () async {
-              final mailto = "mat029studiocontact@gmail.com";
-              final subject = "Contact for dice app";
-              final message = "thanks to write you mail in english or french";
-              final Uri mailurl =
-                  Uri.parse("mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}");
-              if (await canLaunchUrl(mailurl)) {
-                await launchUrl(mailurl);
+              String strURL = Platform.isAndroid
+                  ? "https://play.google.com/store/apps/details?id=$androidAppBundleId"
+                  : "https://itunes.apple.com/it/app/$appstoreAppId?mt=8";
+
+              if (await launchUrl(Uri.parse(strURL), mode: LaunchMode.externalApplication)) {
+                await canLaunchUrl(Uri.parse(strURL));
               }
             },
-            child: Icon(Icons.mail),
-          ),
-        ),
-      ]),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-            child: Text(
-              AppLocalizations.of(context)!.privacy,
-              textScaleFactor: 1.5,
+            icon: Icon(
+              Icons.star,
+              size: deviceSize.width / 12,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 17),
-            child: TextButton(
+          )),
+      SettingsDivider(),
+      SettingsRow(
+          deviceSize,
+          AppLocalizations.of(context)!.contact,
+          IconButton(
+              onPressed: () async {
+                final mailto = "mat029studiocontact@gmail.com";
+                final subject = "Contact for dice app";
+                final message = "thanks to write you mail in english or french";
+                final Uri mailurl =
+                    Uri.parse("mailto:$mailto?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}");
+                if (await canLaunchUrl(mailurl)) {
+                  await launchUrl(mailurl);
+                }
+              },
+              icon: Icon(
+                Icons.mail,
+                size: deviceSize.width / 12,
+              ))),
+      SettingsDivider(),
+      SettingsRow(
+          deviceSize,
+          AppLocalizations.of(context)!.privacy,
+          IconButton(
               onPressed: () async {
                 final Uri privacyurl =
                     Uri.parse("https://github.com/Mat029/mat029studio_privacy/blob/main/privacy_policy_dice.md");
@@ -118,43 +72,23 @@ Widget settings2(context) {
                   await launchUrl(privacyurl);
                 }
               },
-              child: Icon(Icons.privacy_tip_sharp),
-            ),
-          ),
-        ],
-      ),
-      Divider(
-        thickness: 1.1,
-        color: Colors.grey,
-        endIndent: 17,
-        height: 0,
-        indent: 17,
-      ),
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Container(
-          padding: EdgeInsets.fromLTRB(30, 25, 0, 25),
-          child: Text(
-            AppLocalizations.of(context)!.back,
-            textScaleFactor: 1.5,
+              icon: Icon(
+                Icons.privacy_tip_sharp,
+                size: deviceSize.width / 12,
+              ))),
+      SettingsDivider(),
+      SettingsRow(
+        deviceSize,
+        AppLocalizations.of(context)!.back,
+        IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.keyboard_arrow_left,
+            size: deviceSize.width / 7,
+            color: Theme.of(context).hintColor,
           ),
         ),
-        Container(
-          padding: EdgeInsets.only(right: 17),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Theme.of(context).hintColor,
-              backgroundColor: Colors.transparent,
-              elevation: 0.0,
-              shadowColor: Colors.black12,
-            ),
-            onPressed: () => Navigator.pop(context),
-            child: Icon(
-              Icons.keyboard_arrow_left,
-              size: 45,
-            ),
-          ),
-        ),
-      ])
+      ),
     ],
   );
 }

@@ -10,7 +10,7 @@
 - ~~adding a new compatible screen size, with test and fix~~ (delay to beta) ❌
 - publish in play store (private beta) ✅ (31/08 : beta 1.0.0-pre 2 )
 
-## Beta (~~ late July/early August 2021 ~~ accepted on September 6):
+## Beta (~~late July/early August 2021~~ accepted on September 6):
 
 - fixed a major bug (orientation) ✅ (06/09: 1.0.1)
 - added a settings page ✅ (20/09: 1.1.0/1)
